@@ -1,0 +1,14 @@
+Products:
+    - name
+    - image
+    - images*
+    - price
+    - subtitle
+    - description
+    - brand*
+    - sku
+    - reviews*
+    - Specificatios
+    - Video link
+    - quantity
+    - flag
