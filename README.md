@@ -107,6 +107,8 @@ Tailor your online store to your brand and style. Customize settings in the `set
 
 We invite you to join our community and contribute to shaping the future of e-commerce. Whether you're interested in enhancing the platform, fixing bugs, or introducing new features, we welcome your valuable contributions. Please take a moment to review our [contribution guidelines](CONTRIBUTING.md).
 
+
+## Please ⭐ the repo to support our project
 ## License
 
 Django Amazon is open-source and licensed under the MIT License. You can find the full license text in the [LICENSE](LICENSE) file.
