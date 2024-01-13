@@ -3,7 +3,7 @@
 
 
 <p align="center">
-<img src="https://github.com/abdulrahim-ramadan/abdulrahim-ramadan/blob/main/Files/Amazon Clone.gif"width="100" height="100" alt="Amazon Clone"  />
+<img src="https://github.com/abdulrahim-ramadan/abdulrahim-ramadan/blob/main/Files/Amazon Clone.gif"width="90" height="90" alt="Amazon Clone"  />
 </p>
 
 
