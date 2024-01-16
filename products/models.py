@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 
 
@@ -26,6 +27,11 @@ class Product(models.Model):
     brand = models.ForeignKey('Brand',related_name='product_brand',on_delete=models.SET_NULL,null=True)
     slug =models.SlugField(null=True,blank=True)
 
+# slug
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Product, self).save(*args, **kwargs)
 
 
 
@@ -43,6 +49,9 @@ class Brand(models.Model):
     slug =models.SlugField(null=True,blank=True)
 
 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Brand, self).save(*args, **kwargs)
 
 class Review(models.Model):
     user =models.ForeignKey(User,related_name='review_user',on_delete=models.SET_NULL,null=True,blank=True)
