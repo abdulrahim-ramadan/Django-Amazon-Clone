@@ -33,19 +33,19 @@ Django Amazon  is an Amazon Clone project that provides a comprehensive e-commer
 
 ## Key Features
 
-🛒 **Product Management**: Effortlessly create, edit, and categorize products within your catalog.
+🛒 ***Product Management**: Effortlessly create, edit, and categorize products within your catalog.
 
-💳 **Secure Checkout**: Provide a secure and seamless shopping cart and checkout system for your customers.
+💳 ***Secure Checkout**: Provide a secure and seamless shopping cart and checkout system for your customers.
 
-📦 **Order Tracking**: Keep customers informed about the status of their orders, enhancing their trust in your service.
+📦 ***Order Tracking**: Keep customers informed about the status of their orders, enhancing their trust in your service.
 
-📱 **Responsive Design**: Ensure a consistent and delightful shopping experience across all devices, from desktop to mobile.
+📱  ***Responsive Design**: Ensure a consistent and delightful shopping experience across all devices, from desktop to mobile.
 
-🔐 **User Authentication**: Offer user registration to personalize the shopping journey, building trust and loyalty.
+🔐 ***User Authentication**: Offer user registration to personalize the shopping journey, building trust and loyalty.
 
-📊 **Sales Analytics**: Gain valuable insights into your business's performance and make data-driven decisions.
+📊 ***Sales Analytics**: Gain valuable insights into your business's performance and make data-driven decisions.
 
-🌍 **Multi-Language Support**: Expand your market reach with built-in multilingual support, connecting with a global audience.
+🌍 ***Multi-Language Support**: Expand your market reach with built-in multilingual support, connecting with a global audience.
 
 ## Getting Started
 
