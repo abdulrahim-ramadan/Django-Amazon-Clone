@@ -1,13 +1,13 @@
 Products:
     - name
     - image
-    - images*
+    - images**
     - price
     - subtitle
     - description
-    - brand*
+    - brand**
     - sku
-    - reviews*
+    - reviews**
     - Specificatios
     - Video link
     - quantity
