@@ -1,17 +1,18 @@
 Products:
     - name
     - image
-    - images*
+    - images**
     - price
     - subtitle
     - description
-    - brand*
+    - brand**
     - sku
-    - reviews*
+    - reviews**
     - Specificatios
     - Video link
     - quantity
     - flag
+<<<<<<< HEAD
 
 
 
@@ -20,3 +21,5 @@ Products:
 
 
 
+=======
+>>>>>>> 10d77828aefb71fe6669b83a1dd064ae7c5541b7

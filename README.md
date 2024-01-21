@@ -3,7 +3,7 @@
 
 
 <p align="center">
-<img src="https://github.com/abdulrahim-ramadan/abdulrahim-ramadan/blob/main/Files/Amazon Clone.gif"width="90" height="90" alt="Amazon Clone"  />
+<img src="https://github.com/abdulrahim-ramadan/abdulrahim-ramadan/blob/main/Files/Amazon Clone.gif"width="100" height="100" alt="Amazon Clone"  />
 </p>
 
 
@@ -33,19 +33,19 @@ Django Amazon  is an Amazon Clone project that provides a comprehensive e-commer
 
 ## Key Features
 
-🛒 **Product Management**: Effortlessly create, edit, and categorize products within your catalog.
+🛒 ***Product Management**: Effortlessly create, edit, and categorize products within your catalog.
 
-💳 **Secure Checkout**: Provide a secure and seamless shopping cart and checkout system for your customers.
+💳 ***Secure Checkout**: Provide a secure and seamless shopping cart and checkout system for your customers.
 
-📦 **Order Tracking**: Keep customers informed about the status of their orders, enhancing their trust in your service.
+📦 ***Order Tracking**: Keep customers informed about the status of their orders, enhancing their trust in your service.
 
-📱 **Responsive Design**: Ensure a consistent and delightful shopping experience across all devices, from desktop to mobile.
+📱  ***Responsive Design**: Ensure a consistent and delightful shopping experience across all devices, from desktop to mobile.
 
-🔐 **User Authentication**: Offer user registration to personalize the shopping journey, building trust and loyalty.
+🔐 ***User Authentication**: Offer user registration to personalize the shopping journey, building trust and loyalty.
 
-📊 **Sales Analytics**: Gain valuable insights into your business's performance and make data-driven decisions.
+📊 ***Sales Analytics**: Gain valuable insights into your business's performance and make data-driven decisions.
 
-🌍 **Multi-Language Support**: Expand your market reach with built-in multilingual support, connecting with a global audience.
+🌍 ***Multi-Language Support**: Expand your market reach with built-in multilingual support, connecting with a global audience.
 
 ## Getting Started
 
@@ -89,7 +89,7 @@ Getting started with Django-Store is a breeze. Follow these steps to set up your
 
 8. **Access the Admin Panel**: Begin configuring your online store by accessing the admin panel at [http://localhost:8000/admin/](http://localhost:8000/admin/).
 
-## Using Django Amazon Clone
+### Using Django Amazon Clone
 
 Django Amazon provides you with a canvas to create a unique online shopping experience. Here's what you can do:
 
@@ -99,7 +99,7 @@ Django Amazon provides you with a canvas to create a unique online shopping expe
 
 - **Admin Panel Control**: The admin panel gives you full control over your e-commerce venture, making it easy to manage and grow your business.
 
-## Customization and Configuration
+### Customization and Configuration
 
 Tailor your online store to your brand and style. Customize settings in the `settings.py` file to meet your specific requirements. For production deployment, ensure the utmost security by configuring a Django SECRET_KEY, database, and switching off debugging.
 
@@ -108,9 +108,9 @@ Tailor your online store to your brand and style. Customize settings in the `set
 We invite you to join our community and contribute to shaping the future of e-commerce. Whether you're interested in enhancing the platform, fixing bugs, or introducing new features, we welcome your valuable contributions. Please take a moment to review our [contribution guidelines](CONTRIBUTING.md).
 
 
-## License
+### License
 
 Django Amazon is open-source and licensed under the MIT License. You can find the full license text in the [LICENSE](LICENSE) file.
 Elevate your online retail game with Django-Store. Create, customize, and conquer the e-commerce world. Join our community, contribute to shaping the future of e-commerce, and be part of this exciting journey.
 
-## Please ⭐ the repo to support our project
+### Please ⭐ the repo to support our project
