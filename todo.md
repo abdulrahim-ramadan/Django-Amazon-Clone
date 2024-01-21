@@ -1,10 +1,11 @@
-- products :
+products :
     - template
     - pagination
     - add review
     - API
     - queryset api
-- home :
+
+ home :
     - add home
     - orders:
     - orders
@@ -18,7 +19,7 @@
     - profile
     - user API
 
-- advanced :
+advanced :
     - celery
     - redis
     - caching
