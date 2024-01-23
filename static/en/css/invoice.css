@@ -1,0 +1,95 @@
+/*========================================
+            INVOICE PAGE STYLE
+=========================================*/
+.invoice-recieved {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.invoice-recieved h6 {
+  text-transform: capitalize;
+}
+
+.invoice-recieved h6 span {
+  display: block;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.invoice-details li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.invoice-details li:last-child {
+  margin-bottom: 0px;
+}
+
+.invoice-details li h6 {
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.invoice-details li h6 small {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 3px;
+}
+
+.invoice-details li p {
+  width: 250px;
+  text-align: right;
+}
+
+.table-scroll {
+  padding: 35px;
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.back-home {
+  text-align: center;
+}
+
+.back-home a {
+  margin-top: 10px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.back-home a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .invoice-recieved {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .invoice-recieved h6 {
+    margin-bottom: 25px;
+    margin-right: 25px;
+  }
+}

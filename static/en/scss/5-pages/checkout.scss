@@ -1,0 +1,105 @@
+
+
+
+/*========================================
+            CHECKOUT PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+.chekout-coupon {
+    width: 600px;
+    margin: 45px auto 5px;
+    text-align: center;
+}
+
+// checkout total charge
+.checkout-charge {
+    width: 600px;
+    margin: 0 auto;
+
+    ul {
+        border-top: 3px solid var(--primary);
+
+        li {
+            padding: 15px 15px;
+            @include flex__center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+
+            &:last-child {
+                border-bottom: none;
+
+                span {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: var(--primary);
+                }
+            }
+
+            span {
+                font-weight: 500;
+                color: var(--heading);
+                text-transform: capitalize;
+
+                small {
+                    font-size: 14px;
+                    font-weight: 400;
+                    margin-left: 3px;
+                }
+            }
+        }
+    }
+}
+
+.checkout-check {
+    @include flex__start;
+    margin-bottom: 25px;
+    margin-top: 50px;
+
+    input {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        margin-top: 4px;
+        cursor: pointer;
+    }
+
+    label {
+        line-height: 22px;
+
+        a {
+            color: var(--primary);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.checkout-proced {
+    .btn {
+        width: 100%;
+    }
+}
+
+.table-action {
+    .view,
+    .trash {
+        i {
+            background: var(--chalk);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .chekout-coupon,
+    .checkout-charge {
+        width: 100%;
+    }
+
+    .checkout-check {
+        margin-top: 15px;
+    }
+}

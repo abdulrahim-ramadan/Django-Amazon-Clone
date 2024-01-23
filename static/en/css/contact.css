@@ -1,0 +1,48 @@
+/*========================================
+            CONTACT PAGE STYLE
+=========================================*/
+.contact-form {
+  border-radius: 8px;
+  padding: 30px 30px;
+  margin: 0px 2.5px 30px;
+  background: var(--white);
+}
+
+.contact-form h4 {
+  margin-bottom: 25px;
+}
+
+.contact-map {
+  padding: 30px;
+  margin: 0px 2.5px 30px;
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.contact-map iframe {
+  height: 474px;
+  width: 100%;
+  border: none;
+}
+
+.contact-social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-social h4 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 575px) {
+  .contact-form,
+  .contact-map {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 575px) {
+  .contact-part .container {
+    max-width: 400px;
+  }
+}

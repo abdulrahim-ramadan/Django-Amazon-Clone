@@ -1,0 +1,122 @@
+
+
+
+//========================================
+//            BRAND WRAP STYLE
+//========================================
+.brand-wrap {
+    text-align: center;
+    padding-top: 15px;
+
+    &:hover {
+        .brand-media {
+            &::before {
+                border-color: var(--primary);
+                animation-play-state: running;  
+            }
+        }
+
+        .brand-overlay {
+            transform: scale(1);
+        }
+    }
+}
+
+.brand-media {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        width: 175px;
+        height: 175px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px dashed var(--border);
+        transform: translate(-50%, -50%);
+        animation: rotate360 1.2s linear infinite;
+        animation-play-state: paused;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+}
+
+@keyframes rotate360 { 
+    to { 
+        transform: translate(-50%, -50%) rotate(360deg); 
+    }           
+}
+
+.brand-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    transform: scale(0);
+    @include flex__center;
+    @include cursor__transition;
+
+    a {
+        i {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            color: var(--white);
+            background: var(--primary);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--primary);
+                background: var(--white);
+            }
+        }
+    }
+}
+
+.brand-meta {
+    h4 {
+        text-transform: capitalize;
+        margin-bottom: 6px;
+    }
+
+    ul {
+        margin-bottom: 3px;
+
+        li {
+            font-size: 13px;
+            margin: 0px 1px;
+            color: var(--gray);
+            display: inline-block;
+        }
+
+        .active {
+            color: var(--yellow);
+        }
+
+        .total {
+            color: var(--heading);
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .brand-wrap {
+        width: 200px;
+    }
+}

@@ -1,0 +1,163 @@
+
+
+
+
+.dropdown-arrow {
+    position: relative;
+    padding-right: 18px !important;
+
+    &:hover {
+        &::before {
+            color: var(--primary);
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: "\ea99";
+        top: 50%;
+        right: 0px;
+        font-size: 15px;
+        line-height: 15px;
+        color: var(--text);
+        font-family: IcoFont;
+        transform: translateY(-50%);
+        @include cursor__transition;
+    }
+}
+
+.dropdown-link {
+    position: relative;
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--primary);
+        background: var(--chalk);
+
+        &::before {
+            color: var(--primary);
+        }
+    }
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        content: "\f054";
+        font-size: 10px;
+        font-weight: 900;
+        font-family: "Font Awesome 5 Free";
+        transform: translateY(-50%);
+        @include cursor__transition;
+    }
+}
+
+.dropdown-link.active {
+    color: var(--primary);
+
+    &::before {
+        color: var(--primary);
+        transform: translateY(-50%) rotate(90deg);
+    }
+}
+
+.dropdown-list {
+    display: none;
+    padding: 0px 20px;
+    @include cursor__transition;
+
+    li {
+        a {
+            width: 100%;
+            font-size: 15px;
+            line-height: 18px;
+            border-radius: 8px;
+            padding: 10px 15px 10px 35px;
+            color: var(--text);
+            background: var(--white);
+            position: relative;
+            white-space: nowrap;
+            text-transform: capitalize;
+            @include cursor__transition;
+        
+            &:hover {
+                color: var(--primary);
+                background: var(--chalk);
+            }
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                content: "\f068";
+                font-size: 10px;
+                font-weight: 900;
+                font-family: "Font Awesome 5 Free";
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.dropdown {
+    &:hover {
+        .dropdown-position-list {
+            visibility: visible;
+            opacity: 1;
+            top: 70px;
+        }
+    }
+}
+
+.dropdown-position-list {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    z-index: 2;
+    width: 200px;
+    height: auto;
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: 0px 15px 35px 0px rgba(0, 0, 0, 0.1);
+    @include cursor__transition;
+
+    &::before {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        top: -7px;
+        left: 12px;
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        transform: rotate(45deg);
+        background: var(--white);
+        border-top: 1px solid var(--border);
+        border-left: 1px solid var(--border);
+    }
+
+    li {
+
+        a {
+            width: 100%;
+            font-size: 15px;
+            line-height: 18px;
+            border-radius: 8px;
+            padding: 8px 15px;
+            color: var(--text);
+            background: var(--white);
+            white-space: nowrap;
+            text-transform: capitalize;
+            @include cursor__transition;
+        
+            &:hover {
+                color: var(--primary);
+                background: var(--chalk);
+            }
+        }
+    }
+}

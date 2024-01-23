@@ -1,0 +1,31 @@
+
+
+
+
+.alert {
+    border: none;
+    margin: 0px;
+    padding: 0px 15px;
+    border-radius: 0px;
+}
+
+.alert-info {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 20px;
+    border-radius: 3px;
+    background: var(--white);
+    border-top: 3px solid var(--primary);
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+
+    p {
+        font-weight: 500;
+        color: var(--primary);
+        text-shadow: var(--primary-shadow);
+
+        a {
+            margin-left: 5px;
+            text-decoration: underline;
+        }
+    }
+}

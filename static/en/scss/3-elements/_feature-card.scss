@@ -1,0 +1,244 @@
+
+
+
+
+
+
+
+//========================================
+//       feature CARD ELEMENT STYLE
+//========================================
+.feature-card {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 25px;
+    padding: 18px 18px;
+    border-radius: 8px;
+    background: var(--white);
+    border: 1px solid var(--white);
+    @include flex__start;
+    @include cursor__transition;
+
+    &:hover {
+        border-color: var(--primary);
+        box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.1);
+        
+        .feature-widget {
+            opacity: 1;
+            bottom: 15px;
+        }
+
+        .feature-add {
+            color: var(--white);
+            background: var(--primary);
+        }
+    }
+}
+
+.feature-media {
+    position: relative;
+}
+
+.feature-label {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.label-text {
+    font-size: 14px;
+    padding: 5px 8px;
+    line-height: 13px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    color: var(--white);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.label-text.off {
+    background: var(--red);
+}
+
+.label-text.new {
+    background: var(--green);
+}
+
+.label-text.sale {
+    background: var(--orange);
+}
+
+.label-text.feat {
+    background: var(--purple);
+}
+
+.label-text.rate {
+    background: var(--yellow);
+}
+
+.label-text.order {
+    background: var(--blue);
+}
+
+.feature-wish {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 18px;
+    color: var(--gray-chalk);
+}
+
+.feature-wish.active {
+    color: var(--primary);
+}
+
+.feature-image {
+    img {
+        width: 220px;
+    }
+}
+
+.feature-widget {
+    @include flex__center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    opacity: 0;
+    @include cursor__transition;
+
+    a {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+        margin: 0px 6px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 8px;
+        color: var(--white);
+        background: var(--primary);
+        text-shadow: var(-primary-tshadow);
+        box-shadow: 0px 7px 12px 0px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.feature-content {
+    width: 100%;
+    padding-left: 25px;
+    margin-left: 25px;
+    border-left: 1px solid var(--border);
+}
+
+.feature-rating {
+    @include flex__center__start;
+    margin-bottom: 3px;
+
+    i,
+    a {
+        font-size: 14px;
+        margin: 0px 2px;
+        color: var(--gray);
+    }
+
+    a {
+        white-space: nowrap;
+        @include cursor__transition;
+
+        &:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+    }
+
+    .active {
+        color: var(--yellow);
+    }
+}
+
+.feature-name {
+    margin-bottom: 3px;
+    text-transform: capitalize;
+
+    a {
+        color: var(--sub-heading);
+        @include cursor__transition;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}
+
+.feature-price {
+    @include flex__center__start;
+    align-items: baseline;
+    margin-bottom: 10px;
+
+    del {
+        color: var(--red);
+        margin-right: 8px;
+    }
+
+    span {
+        color: var(--primary);
+        white-space: nowrap;
+
+        small {
+            font-weight: 400;
+        }
+    }
+}
+
+.feature-desc {
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+
+//========================================
+//      RESPONSIVE FEATURE CARD STYLE
+//========================================
+@media (max-width: 575px) {
+    .feature-card {
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+
+    .feature-image {
+        img {
+            width: 100%;
+        }
+    }
+
+    .feature-name {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 450px) {
+    .feature-card {
+        align-items: center;
+    }
+
+    .feature-content {
+        padding-left: 12px;
+        margin-left: 12px;
+    }
+    
+    .feature-desc {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .feature-image {
+        img {
+            width: 190px;
+        }
+    }
+}

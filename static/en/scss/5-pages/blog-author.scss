@@ -1,0 +1,123 @@
+
+
+
+
+
+
+
+/*========================================
+          AUTHOR SINGLE PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+.author-single {
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background: var(--white);
+}
+
+.author-content {
+    margin-bottom: 20px;
+    @include flex__start;
+}
+
+.author-image {
+    margin-right: 20px;
+    
+    img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 8px solid var(--chalk);
+    }
+}
+
+.author-info {
+    margin-top: 10px;
+}
+
+.author-name {
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.author-mail {
+    color: var(--primary);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.author-social {
+    li {
+        display: inline-block;
+
+        a {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            line-height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            color: var(--text);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--white);
+                background: var(--primary);
+            }
+        }
+    }
+}
+
+.author-bio {
+    margin-bottom: 30px;
+}
+
+.author-meta {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: auto;
+
+    li {
+        padding: 10px 0px;
+        border-radius: 6px;
+        text-align: center;
+        background: var(--chalk);
+        @include flex__center;
+        @include cursor__transition;
+
+        &:hover {
+            background: var(--primary);
+            color: var(--white);
+
+            i {
+                color: var(--white);
+            }
+        }
+
+        i {
+            color: var(--primary);
+            margin-right: 6px;
+            font-size: 16px;
+            @include cursor__transition;
+        }
+    }
+}
+
+.top-filter {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 575px) {
+    .author-content {
+        flex-direction: column;
+    }
+
+    .author-image {
+        margin: 0px;
+    }
+}

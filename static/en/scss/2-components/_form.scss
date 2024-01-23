@@ -1,0 +1,161 @@
+
+
+
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h3 {
+        text-transform: capitalize;
+    }
+}
+
+.form-group {
+    margin-bottom: 25px;
+
+    small {
+        color: var(--gray);
+        letter-spacing: 0.3px;
+        padding: 0px 0px 0px 20px;
+    }
+
+    textarea {
+        height: 150px;
+        padding: 12px 20px;
+    }
+}
+
+.form-label {
+    font-weight: 500;
+    margin: 0px 0px 7px 3px;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+.form-control {
+    width: 100%;
+    height: 45px;
+    border-radius: 6px;
+    padding: 0px 20px 2px;
+    color: var(--text);
+    background: var(--chalk);
+    border: 1px solid var(--border);
+
+    &:focus-within {
+        background: var(--chalk);
+        border-color: var(--primary);
+        box-shadow: none;
+        outline: 0;
+    }
+}
+
+.form-control[type=file]::-webkit-file-upload-button,
+.form-control[type=file]::file-selector-button {
+    border: none;
+    background: none;
+    height: 45px;
+    line-height: 45px;
+    padding: 5px 15px 0px;
+    color: var(--gray);
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}
+
+.form-select {
+    height: 45px;
+    font-size: 15px;
+    padding: 0px 16px;
+    letter-spacing: 0.3px;
+    background-size: 12px 10px;
+    text-transform: capitalize;
+    color: var(--text);
+    cursor: pointer;
+
+    &:focus-within {
+        box-shadow: none;
+        border-color: var(--primary);
+    }
+}
+
+.form-check-input:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.form-btn {
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 45px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--primary);
+}
+
+// form input with icon
+.form-input-group {
+    position: relative;
+
+    &:focus-within {
+        i {
+            color: var(--primary);
+        }
+    }
+
+    input {
+        padding: 0px 20px 2px 45px;
+    }
+
+    textarea {
+        padding: 12px 20px 12px 45px;
+    }
+
+    i {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        line-height: 45px;
+        border-radius: 50%;
+        text-align: center;
+    }
+}
+
+.form-btn-group {
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 45px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--primary);
+    
+    i {
+        font-size: 15px;
+        margin-right: 5px;
+        display: inline-block;
+    }
+}

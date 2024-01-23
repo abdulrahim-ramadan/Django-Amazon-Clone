@@ -1,0 +1,18 @@
+.category-wrap {
+  margin: 0px 12px 45px;
+}
+
+@media (max-width: 575px) {
+  .category-wrap {
+    width: 100%;
+  }
+  .col {
+    padding: 0px 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .category-wrap {
+    margin: 0px 0px 30px;
+  }
+}

@@ -1,0 +1,214 @@
+
+
+/*=====================================
+            FOOTER PART STYLE
+======================================*/
+.footer-part {
+    padding-top: 95px;
+}
+
+.footer-widget {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.footer-logo {
+    margin-bottom: 25px;
+
+    img {
+        width: 180px;
+    }
+}
+
+.footer-desc {
+    margin-bottom: 30px;
+}
+
+.footer-social {
+    li {
+        display: inline-block;
+        margin-right: 7px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        a {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            line-height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            color: var(--primary);
+            background: var(--white);
+            text-shadow: var(--primary-tshadow);
+            box-shadow: var(--primary-bshadow);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--white);
+                background: var(--primary);
+            }
+        }
+    }
+}
+
+.footer-title {
+    margin-bottom: 25px;
+    letter-spacing: -0.3px;
+    text-transform: capitalize;
+}
+
+.footer-widget.contact {
+    margin-left: 30px;
+}
+
+.footer-contact {
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        i {
+            font-size: 30px;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+
+        p {
+            span {
+                display: block;
+            }
+        }
+    }
+}
+
+.footer-links {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+
+    ul {
+        li {
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+
+            a {
+                color: var(--text);
+                text-transform: capitalize;
+                @include cursor__transition;
+
+                &:hover {
+                    color: var(--primary);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.footer-app {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+
+    a {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.footer-bottom {
+    margin-top: 75px;
+    padding: 20px 35px 15px;
+    border-radius: 8px 8px 0px 0px;
+    background: var(--primary);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-copytext {
+    font-size: 15px;
+    color: var(--white);
+
+    a {
+        color: var(--green-chalk);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer-card {
+    a {
+        margin-left: 10px;
+        
+        img {
+            width: 50px;
+            border-radius: 3px;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .footer-part {
+        .container-fluid {
+            padding: 0px 25px;
+        }
+    }
+
+    .footer-widget.contact {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .footer-part {
+        padding-top: 50px;
+    }
+
+    .footer-widget {
+        margin-bottom: 40px;
+    }
+
+    .footer-bottom {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-bottom {
+        padding: 25px 15px 75px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-copytext {
+        margin-bottom: 10px;
+    }
+
+    .footer-card {
+        a {
+            margin: 0px 3px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .footer-bottom {
+        padding: 25px 30px 75px;
+    }
+}

@@ -1,0 +1,58 @@
+
+
+.star-rating {
+    direction: rtl;
+    text-align: center;
+    margin: 25px 0px;
+
+    input {
+        display: none;
+
+        &:checked ~ label {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    label {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        margin: 0px 8px;
+
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+
+            &:hover ~ label {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &::before {
+            content: "\ec7c";
+            font-family: 'Icofont';
+            font-weight: 900;
+            font-size: 35px;
+            display: block;
+            color: #bbbbbb;
+        }
+
+        &::after {
+            content: "\ec7c";
+            font-family: 'Icofont';
+            font-weight: 900;
+            font-size: 35px;
+            position: absolute;
+            display: block;
+            top: 0px;
+            left: 0px;
+            color: var(--yellow);
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+
+
+
+
+.offer-card {
+    margin-bottom: 30px;
+    
+    a {
+        width: 100%;
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
+}
+
+.offer-div {
+    @include flex__center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin: 0px 15px;
+    border-radius: 0px 0px 8px 8px;
+    background: var(--white);
+
+    h5 {
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    button,
+    span {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--primary);
+        text-transform: capitalize;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 575px) {
+    .offer-card {
+        width: 320px;
+        margin: 0px auto 30px;
+    }
+}

@@ -1,0 +1,81 @@
+
+
+
+//========================================
+//           SHOP FILTER STYLE
+//========================================
+.shop-filter {
+    padding: 20px 30px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    @include flex__center__between;
+
+    .nice-select {
+        border-radius: 6px;
+        background: var(--chalk);
+        padding: 8px 35px 8px 20px;
+        border: 1px solid var(--border);
+
+        &::after {
+            right: 20px;
+        }
+
+        .current {
+            font-size: 15px;
+        }
+
+        .list {
+            top: 45px;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    ul {
+        @include flex__center;
+
+        li {
+            margin: 0px 5px;
+
+            a {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                line-height: 40px;
+                border-radius: 50%;
+                text-align: center;
+                color: var(--text);
+                background: var(--chalk);
+            }
+
+            .active {
+                color: var(--white);
+                background: var(--primary);
+            }
+        }
+    }
+
+    p {
+        font-size: 15px;
+        text-transform: capitalize;
+    }
+}
+
+//========================================
+//      RESPONSIVE SHOP FILTER STYLE
+//========================================
+@media (max-width: 767px) {
+    .shop-filter {
+        flex-direction: column;
+
+        .nice-select {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-bottom: 15px;
+        }
+    }
+}

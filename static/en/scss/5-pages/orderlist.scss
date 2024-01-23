@@ -1,0 +1,139 @@
+
+
+
+
+
+/*========================================
+            ORDERLIST PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+.orderlist-filter {
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    @include flex__center;
+    justify-content: space-between;
+
+    h5 {
+        text-transform: capitalize
+    }
+}
+
+.filter-short {
+    @include flex__center;
+
+    .form-label {
+        font-size: 18px;
+        margin: 0px 8px 0px 0px;
+        color: var(--heading);
+    }
+
+    .form-select {
+        width: 150px;
+        background: var(--chalk);
+    }
+}
+
+// ORDERLIST
+.orderlist {
+    padding: 0px 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    @include cursor__transition;
+}
+
+.orderlist-head {
+    padding: 25px 0px;
+    @include flex__center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    h5 {
+        color: var(--primary);
+        text-transform: capitalize;
+    }
+}
+
+.orderlist-details {
+    padding: 25px;
+    border-radius: 8px;
+    background: var(--chalk);
+    margin-bottom: 25px;
+
+    li {
+        @include flex__start;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        h6 {
+            line-height: 26px;
+            white-space: nowrap;
+            text-transform: capitalize;
+
+            small {
+                font-size: 14px;
+                font-weight: 400;
+                margin-left: 3px;
+            }
+        }
+
+        p {
+            width: 250px;
+            text-align: right;
+        }
+    }
+}
+
+.orderlist-deliver {
+    height: 215px;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    background: var(--chalk);
+
+    h6 {
+        margin-bottom: 15px;
+        white-space: nowrap;
+        text-transform: capitalize;
+    }
+
+    p {
+        text-transform: capitalize;
+    }
+}
+
+.table-list {
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background: var(--chalk);
+}
+
+@media (max-width: 575px) {
+    .orderlist-filter {
+        flex-direction: column;
+        justify-content: center;
+
+        h5 {
+            margin-bottom: 15px;
+        }
+    }
+
+    .orderlist {
+        padding: 0px 15px;
+    }
+
+    .orderlist-head {
+        padding: 15px 0px;
+    }
+}

@@ -1,0 +1,241 @@
+/*========================================
+          HOME-CLASSIC PAGE STYLE
+=========================================*/
+.navbar-part {
+  position: absolute;
+  top: 128px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all linear .3s;
+  -webkit-transition: all linear .3s;
+  -moz-transition: all linear .3s;
+  -ms-transition: all linear .3s;
+  -o-transition: all linear .3s;
+}
+
+.header-navbar-fixed.active .navbar-part {
+  top: 69px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.header-navbar-fixed.active .dropdown-megamenu:hover .megamenu {
+  top: 62px;
+}
+
+.navbar-content {
+  border-top: none;
+}
+
+.navbar-link {
+  color: var(--white);
+}
+
+.dropdown-arrow::before {
+  color: var(--white);
+}
+
+.navbar-info i,
+.navbar-info p {
+  color: var(--white);
+}
+
+.dropdown-megamenu:hover .megamenu {
+  top: 70px;
+}
+
+.megamenu {
+  top: 100px;
+}
+
+.home-classic-slider {
+  margin-bottom: 30px;
+}
+
+.home-classic-slider .dandik {
+  right: 30px;
+}
+
+.home-classic-slider .bamdik {
+  left: 30px;
+}
+
+.banner-part {
+  padding: 210px 0px 150px;
+  position: relative;
+  z-index: 1;
+  background-size: cover !important;
+}
+
+.banner-part::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.banner-content h1 {
+  text-transform: capitalize;
+  margin-bottom: 22px;
+  color: var(--white);
+}
+
+.banner-content p {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 50px;
+  color: var(--white);
+}
+
+.banner-btn .btn {
+  margin-right: 15px;
+}
+
+.banner-btn .btn:last-child {
+  margin-right: 0px;
+}
+
+@media (max-width: 767px) {
+  .banner-part {
+    padding: 50px 0px 60px;
+  }
+  .banner-content h1 {
+    font-size: 38px;
+    line-height: 48px;
+  }
+  .banner-btn .btn {
+    margin: 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .banner-part {
+    padding: 70px 0px 80px;
+  }
+  .banner-content h1 {
+    font-size: 42px;
+    line-height: 50px;
+  }
+}
+
+.suggest-slider li {
+  margin: 0px 10px;
+}
+
+@media (max-width: 575px) {
+  .suggest-slider li {
+    margin: 0px 5px;
+  }
+}
+
+.promo-img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.promo-img a {
+  width: 100%;
+}
+
+.promo-img a img {
+  width: 100%;
+  border-radius: 8px;
+  transition: all linear .3s;
+  -webkit-transition: all linear .3s;
+  -moz-transition: all linear .3s;
+  -ms-transition: all linear .3s;
+  -o-transition: all linear .3s;
+}
+
+.promo-img a img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media (max-width: 767px) {
+  .promo-img {
+    margin: 12px 0px;
+  }
+}
+
+.new-slider li {
+  margin: 0px 12px;
+}
+
+@media (max-width: 575px) {
+  .new-slider .product-card {
+    width: 220px;
+  }
+}
+
+.new-slider li {
+  margin: 0px 12px;
+}
+
+@media (max-width: 575px) {
+  .new-slider .product-card {
+    width: 220px;
+  }
+}
+
+.brand-slider .dandik,
+.brand-slider .bamdik {
+  top: 35%;
+}
+
+.testimonial-slider .slick-slide {
+  opacity: 0.3;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  transition: all linear .3s;
+  -webkit-transition: all linear .3s;
+  -moz-transition: all linear .3s;
+  -ms-transition: all linear .3s;
+  -o-transition: all linear .3s;
+}
+
+.testimonial-slider .slick-center {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: all linear .3s;
+  -webkit-transition: all linear .3s;
+  -moz-transition: all linear .3s;
+  -ms-transition: all linear .3s;
+  -o-transition: all linear .3s;
+}
+
+.testimonial-slider .dandik,
+.testimonial-slider .bamdik {
+  opacity: 1;
+  visibility: visible;
+}
+
+.testimonial-slider .dandik {
+  right: 50px;
+}
+
+.testimonial-slider .bamdik {
+  left: 50px;
+}
+
+.blog-slider .blog-card {
+  margin: 0px 15px 25px;
+}
+
+.blog-slider .dandik,
+.blog-slider .bamdik {
+  top: 43%;
+}
+
+@media (max-width: 767px) {
+  .blog-slider .blog-card {
+    margin: 0px 10px 25px;
+  }
+}

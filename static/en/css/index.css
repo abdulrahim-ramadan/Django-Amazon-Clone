@@ -1,0 +1,196 @@
+/*========================================
+            INDEX PAGE STYLE
+=========================================*/
+.home-index-slider .dandik {
+  right: 30px;
+}
+
+.home-index-slider .bamdik {
+  left: 30px;
+}
+
+.home-index-slider .slick-dots {
+  bottom: 50px;
+}
+
+.banner-part {
+  padding: 50px 0px 60px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-part::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.05;
+  background: url(../images/banner-shape.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.banner-1 {
+  background: -webkit-gradient(linear, left top, right top, from(#45f76354), to(#ffc3d024));
+  background: linear-gradient(to right, #45f76354, #ffc3d024);
+}
+
+.banner-2 {
+  background: -webkit-gradient(linear, right top, left top, from(#45f76354), to(#ffc3d024));
+  background: linear-gradient(to left, #45f76354, #ffc3d024);
+}
+
+.banner-content h1 {
+  text-transform: capitalize;
+  margin-bottom: 22px;
+}
+
+.banner-content p {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 50px;
+}
+
+.banner-btn .btn {
+  margin-right: 15px;
+}
+
+.banner-img img {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .banner-content h1 {
+    font-size: 38px;
+    line-height: 48px;
+  }
+  .banner-img {
+    display: none;
+  }
+  .banner-btn .btn {
+    margin: 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .banner-content h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .banner-btn .btn {
+    padding: 14px 22px;
+    margin-right: 10px;
+  }
+}
+
+.suggest-slider li {
+  margin: 0px 10px;
+}
+
+@media (max-width: 575px) {
+  .suggest-slider li {
+    margin: 0px 5px;
+  }
+}
+
+.promo-img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.promo-img a {
+  width: 100%;
+}
+
+.promo-img a img {
+  width: 100%;
+  border-radius: 8px;
+  transition: all linear .3s;
+  -webkit-transition: all linear .3s;
+  -moz-transition: all linear .3s;
+  -ms-transition: all linear .3s;
+  -o-transition: all linear .3s;
+}
+
+.promo-img a img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media (max-width: 767px) {
+  .promo-img {
+    margin: 12px 0px;
+  }
+}
+
+.new-slider li {
+  margin: 0px 12px;
+}
+
+@media (max-width: 575px) {
+  .new-slider .product-card {
+    width: 220px;
+  }
+}
+
+.testimonial-slider .slick-slide {
+  opacity: 0.3;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  transition: all linear .3s;
+  -webkit-transition: all linear .3s;
+  -moz-transition: all linear .3s;
+  -ms-transition: all linear .3s;
+  -o-transition: all linear .3s;
+}
+
+.testimonial-slider .slick-center {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: all linear .3s;
+  -webkit-transition: all linear .3s;
+  -moz-transition: all linear .3s;
+  -ms-transition: all linear .3s;
+  -o-transition: all linear .3s;
+}
+
+.testimonial-slider .dandik,
+.testimonial-slider .bamdik {
+  opacity: 1;
+  visibility: visible;
+}
+
+.testimonial-slider .dandik {
+  right: 50px;
+}
+
+.testimonial-slider .bamdik {
+  left: 50px;
+}
+
+.brand-slider .dandik,
+.brand-slider .bamdik {
+  top: 35%;
+}
+
+.blog-slider .blog-card {
+  margin: 0px 15px 25px;
+}
+
+.blog-slider .dandik,
+.blog-slider .bamdik {
+  top: 43%;
+}
+
+@media (max-width: 767px) {
+  .blog-slider .blog-card {
+    margin: 0px 10px 25px;
+  }
+}

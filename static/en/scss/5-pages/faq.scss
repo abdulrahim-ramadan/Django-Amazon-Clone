@@ -1,0 +1,55 @@
+
+
+
+/*========================================
+            FAQS PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+.faq-child {
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background: var(--white);
+    border-left: 3px solid var(--primary);
+    border-right: 3px solid var(--primary);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        .faq-que {
+            button {
+                color: var(--primary);
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.faq-que {
+    button {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        text-align: left;
+        padding: 22px 25px;
+        color: var(--text);
+        font-size: 18px;
+        font-weight: 500;
+        @include cursor__transition;
+    }
+}
+
+.faq-ans {
+    p {
+        font-size: 16px;
+        line-height: 26px;
+        padding: 20px 25px;
+        border-top: 1px solid var(--border);
+    }
+}
+
+

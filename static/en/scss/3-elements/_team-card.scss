@@ -1,0 +1,87 @@
+
+
+
+
+.team-media {
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+
+    &:hover {
+        img {
+            transform: scale(1.05);
+        }
+
+        .team-overlay {
+            top: 0px;
+            opacity: 1;
+
+            a {
+                padding-top: 0px;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+        @include cursor__transition;
+    }
+}
+
+.team-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.3);
+    @include flex__center;
+    @include cursor__transition;
+
+    a {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+        line-height: 36px;
+        margin: 0px 5px;
+        padding-top: 30px;
+        text-align: center;
+        border-radius: 50%;
+        color: var(--text);
+        background: var(--white);
+        @include cursor__transition;
+    }
+}
+
+.team-meta {
+    text-align: center;
+
+    h5 {
+        text-transform: capitalize;
+
+        a {
+            color: var(--heading);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+
+    p {
+        font-size: 15px;
+        text-transform: capitalize;
+    }
+}
+
+// FOR RESPONSIVE
+@media (max-width: 575px) {
+    .team-card {
+        width: 290px;
+        margin: 0px auto 50px;
+    }
+}

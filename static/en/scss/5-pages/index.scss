@@ -1,0 +1,245 @@
+
+
+
+/*========================================
+            INDEX PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//           BANNER PART STYLE
+//========================================
+.home-index-slider {
+    .dandik {
+        right: 30px;
+    }
+
+    .bamdik {
+        left: 30px;
+    }
+
+    .slick-dots {
+        bottom: 50px;
+    }
+}
+
+.banner-part {
+    padding: 50px 0px 60px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.05;
+        background: url(../images/banner-shape.png);
+        @include background__property;
+    }
+}
+
+.banner-1 {
+    background: linear-gradient(to right, #45f76354, #ffc3d024);
+}
+
+.banner-2 {
+    background: linear-gradient(to left, #45f76354, #ffc3d024);
+}
+
+.banner-content {
+    h1 {
+        text-transform: capitalize;
+        margin-bottom: 22px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 50px;
+    }
+}
+
+.banner-btn {
+    .btn {
+        margin-right: 15px;
+    }
+}
+
+.banner-img {
+    img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-content {
+        h1 {
+            font-size: 38px;
+            line-height: 48px;
+        }
+    }
+
+    .banner-img {
+        display: none;
+    }
+
+    .banner-btn {
+        .btn {
+            margin: 8px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .banner-content {
+        h1 {
+            font-size: 32px;
+            line-height: 42px;
+        }
+    }
+
+    .banner-btn {
+        .btn {
+            padding: 14px 22px;
+            margin-right: 10px;
+        }
+    }
+}
+
+
+//========================================
+//           SUGGEST PART STYLE
+//========================================
+.suggest-slider {
+    li {
+        margin: 0px 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .suggest-slider {
+        li {
+            margin: 0px 5px;
+        }
+    }
+}
+
+
+//========================================
+//           PROMOTION PART STYLE
+//========================================
+.promo-img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+
+    a {
+        width: 100%;
+        
+        img {
+            width: 100%;
+            border-radius: 8px;
+            @include cursor__transition;
+    
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .promo-img {
+        margin: 12px 0px;
+    }
+}
+
+
+//========================================
+//           NEW ITEM PART STYLE
+//========================================
+.new-slider {
+    li {
+        margin: 0px 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .new-slider {
+        .product-card {
+            width: 220px;
+        }
+    }
+}
+
+
+//========================================
+//         TESTIMONIAL PART STYLE
+//========================================
+.testimonial-slider {
+    .slick-slide {
+        opacity: 0.3;
+        transform: scale(0.75);
+        @include cursor__transition;
+    }
+
+    .slick-center {
+        opacity: 1;
+        transform: scale(1);
+        @include cursor__transition;
+    }
+
+    .dandik,
+    .bamdik {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dandik {
+        right: 50px;
+    }
+
+    .bamdik {
+        left: 50px;
+    }
+}
+
+//========================================
+//           BRAND PART STYLE
+//========================================
+.brand-slider {
+    .dandik,
+    .bamdik  {
+        top: 35%;
+    }
+}
+
+
+//========================================
+//           BLOG PART STYLE
+//========================================
+.blog-slider {
+    .blog-card {
+        margin: 0px 15px 25px;
+    }
+
+    .dandik,
+    .bamdik  {
+        top: 43%;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-slider {
+        .blog-card {
+            margin: 0px 10px 25px;
+        }
+    }
+}
+

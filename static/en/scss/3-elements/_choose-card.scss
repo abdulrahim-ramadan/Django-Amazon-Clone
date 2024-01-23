@@ -1,0 +1,39 @@
+
+
+
+.choose-card {
+    display: flex;
+
+    &:hover {
+        i {
+            color: var(--white);
+            background: var(--primary);
+        }
+    }
+}
+
+.choose-icon {
+    i {
+        width: 75px;
+        height: 75px;
+        font-size: 40px;
+        line-height: 75px;
+        border-radius: 50%;
+        margin-right: 30px;
+        text-align: center;
+        display: inline-block;
+        color: var(--primary);
+        background: var(--white);
+        text-shadow: var(--primary-tshadow);
+        box-shadow: var(--primary-bshadow);
+        @include cursor__transition;
+    }
+}
+
+.choose-text {
+    h4 {
+        margin-bottom: 10px;
+        text-transform: capitalize;
+        @include cursor__transition;
+    }
+}

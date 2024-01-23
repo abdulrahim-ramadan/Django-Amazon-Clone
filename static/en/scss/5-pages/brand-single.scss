@@ -1,0 +1,48 @@
+
+
+.single-banner {
+    padding: 100px 0px 180px;
+}
+
+.brand-single {
+    position: relative;
+    text-align: center;
+    margin-top: -120px;
+    z-index: 1;
+
+    a {
+        display: block;
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 10px solid var(--body);
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            text-transform: capitalize;
+            margin-bottom: 3px;
+        }
+    }
+
+    ul {
+        margin-bottom: 3px;
+
+        li {
+            font-size: 13px;
+            margin: 0px 1px;
+            color: var(--gray);
+            display: inline-block;
+        }
+
+        .active {
+            color: var(--yellow);
+        }
+
+        .total {
+            color: var(--heading);
+        }
+    }
+}

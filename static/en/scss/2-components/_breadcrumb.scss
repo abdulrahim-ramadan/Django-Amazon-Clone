@@ -1,0 +1,37 @@
+
+
+
+
+//========================================
+//      BREADCRUMB COMPONENT STYLE
+//========================================
+.breadcrumb {
+    align-items: center;
+    justify-content: center;
+    background: none;
+    margin: 0px;
+
+    .active {
+        color: var(--gray-chalk);
+    }
+}
+
+.breadcrumb-item {
+    font-size: 18px;
+    padding: 0px !important;
+    text-transform: capitalize;
+
+    a {
+        color: var(--chalk);
+
+        &:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+    }
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--white);
+    padding: 0px 8px;
+}

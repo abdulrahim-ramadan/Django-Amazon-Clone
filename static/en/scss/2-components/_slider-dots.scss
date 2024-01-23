@@ -1,0 +1,58 @@
+
+
+
+
+.slider-dots {
+    ul {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        li {
+            width: 9px;
+            height: 9px;
+            margin: 0px 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            display: inline-block;
+            background: var(--primary);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+            @include cursor__transition;
+
+            button {
+                display: none;
+            }
+        }
+
+        li.slick-active {
+            width: 25px;
+            background: var(--primary);
+            @include cursor__transition;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .slider-dots {
+        ul {
+            bottom: 10px;
+
+            li {
+                margin: 0px 6px;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .slider-dots {
+        ul {
+            bottom: 20px;
+
+            li {
+                margin: 0px 6px;
+            }
+        }
+    }
+}

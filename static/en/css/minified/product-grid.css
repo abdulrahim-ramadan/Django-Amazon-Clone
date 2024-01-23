@@ -1,0 +1,1 @@
+.product-grid{display:-ms-grid;display:grid;grid-gap:25px;-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2, 1fr);-ms-grid-rows:auto;grid-template-rows:auto}.product-grid img{width:100%;border-radius:8px}.details-meta{margin-bottom:8px}.details-rating{margin-bottom:10px}.details-price{margin-bottom:15px}.details-add-group{margin:38px 0px 15px}

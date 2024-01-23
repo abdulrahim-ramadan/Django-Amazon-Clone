@@ -1,0 +1,34 @@
+
+
+.brand-wrap {
+    padding: 15px 0px 50px;
+}
+
+.brand-media {
+    margin-bottom: 25px;
+}
+
+@media (max-width: 575px) {
+    .brand-wrap {
+        width: 100%;
+        padding: 15px 0px 30px;
+    }
+
+    .brand-media {
+        &::before {
+            width: 135px;
+            height: 135px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .brand-meta {
+        h4 {
+            font-size: 16px;
+        }
+    }
+}

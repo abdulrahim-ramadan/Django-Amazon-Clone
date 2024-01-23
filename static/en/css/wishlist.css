@@ -1,0 +1,8 @@
+/*========================================
+            WISHLIST PAGE STYLE
+=========================================*/
+@media (max-width: 1199px) {
+  .wishlist-part .container {
+    max-width: 100%;
+  }
+}

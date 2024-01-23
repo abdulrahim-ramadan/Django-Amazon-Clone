@@ -1,0 +1,60 @@
+
+
+
+
+.product-add {
+    width: 100%;
+    font-size: 15px;
+    padding: 6px 0px;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--heading);
+    background: var(--border);
+    text-shadow: var(-primary-tshadow);
+    @include flex__center;
+    @include cursor__transition;
+
+    i {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+}
+
+.product-action {
+    @include flex__center;
+    display: none;
+    
+    button {
+        i {
+            width: 35px;
+            height: 35px;
+            font-size: 14px;
+            line-height: 35px;
+            border-radius: 6px;
+            text-align: center;
+            display: inline-block;
+            color: var(--text);
+            background: var(--chalk);
+            text-shadow: var(--primary-tshadow);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--white);
+                background: var(--primary);
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+        font-size: 15px;
+        margin: 0px 5px;
+        padding: 6px 0px;
+        border-radius: 6px;
+        text-align: center;
+        color: var(--white);
+        background: var(--primary);
+        text-shadow: var(--primary-tshadow);
+    }
+}

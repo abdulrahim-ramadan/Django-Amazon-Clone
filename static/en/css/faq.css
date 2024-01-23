@@ -1,0 +1,44 @@
+/*========================================
+            FAQS PAGE STYLE
+=========================================*/
+.faq-child {
+  border-radius: 8px;
+  margin-bottom: 30px;
+  background: var(--white);
+  border-left: 3px solid var(--primary);
+  border-right: 3px solid var(--primary);
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+}
+
+.faq-child:hover .faq-que button {
+  color: var(--primary);
+}
+
+.faq-child:last-child {
+  margin-bottom: 0px;
+}
+
+.faq-que button {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  text-align: left;
+  padding: 22px 25px;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 500;
+  transition: all linear .3s;
+  -webkit-transition: all linear .3s;
+  -moz-transition: all linear .3s;
+  -ms-transition: all linear .3s;
+  -o-transition: all linear .3s;
+}
+
+.faq-ans p {
+  font-size: 16px;
+  line-height: 26px;
+  padding: 20px 25px;
+  border-top: 1px solid var(--border);
+}

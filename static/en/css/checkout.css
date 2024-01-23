@@ -1,0 +1,109 @@
+/*========================================
+            CHECKOUT PAGE STYLE
+=========================================*/
+.chekout-coupon {
+  width: 600px;
+  margin: 45px auto 5px;
+  text-align: center;
+}
+
+.checkout-charge {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.checkout-charge ul {
+  border-top: 3px solid var(--primary);
+}
+
+.checkout-charge ul li {
+  padding: 15px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.checkout-charge ul li:last-child {
+  border-bottom: none;
+}
+
+.checkout-charge ul li:last-child span {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.checkout-charge ul li span {
+  font-weight: 500;
+  color: var(--heading);
+  text-transform: capitalize;
+}
+
+.checkout-charge ul li span small {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 3px;
+}
+
+.checkout-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 25px;
+  margin-top: 50px;
+}
+
+.checkout-check input {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.checkout-check label {
+  line-height: 22px;
+}
+
+.checkout-check label a {
+  color: var(--primary);
+}
+
+.checkout-check label a:hover {
+  text-decoration: underline;
+}
+
+.checkout-proced .btn {
+  width: 100%;
+}
+
+.table-action .view i,
+.table-action .trash i {
+  background: var(--chalk);
+}
+
+@media (max-width: 767px) {
+  .chekout-coupon,
+  .checkout-charge {
+    width: 100%;
+  }
+  .checkout-check {
+    margin-top: 15px;
+  }
+}

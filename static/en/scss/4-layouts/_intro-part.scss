@@ -1,0 +1,76 @@
+
+
+
+
+//========================================
+//           INTRO PART STYLE
+//========================================
+.intro-part {
+    padding: 80px 0px;
+    background: var(--intro-bg);
+}
+
+.intro-wrap {
+    @include flex__start;
+
+    &:hover {
+        .intro-icon {
+            i {
+                color: var(--white);
+                background: var(--primary);
+            }
+        }
+    }
+}
+
+.intro-icon {
+    margin-right: 20px;
+
+    i {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        line-height: 43px;
+        border-radius: 50%;
+        text-align: center;
+        display: inline-block;
+        color: var(--primary);
+        background: var(--white);
+        border: 3px double var(--primary);
+        box-shadow: var(--primary-bshadow);
+        @include cursor__transition;
+    }
+}
+
+.intro-content {
+    h5 {
+        font-size: 17px;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .intro-part {
+        padding: 60px 0px 30px;
+    }
+
+    .intro-wrap {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .intro-part {
+        padding: 80px 0px 50px;
+    }
+
+    .intro-wrap {
+        margin-bottom: 30px;
+    }
+}

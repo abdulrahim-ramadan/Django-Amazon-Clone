@@ -1,0 +1,42 @@
+
+
+
+.btn {
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 6px;
+    border: 2px solid var(--primary);
+
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+
+.btn-inline {
+    color: var(--white);
+    background: var(--primary);
+
+    &:hover {
+        color: var(--primary);
+        background: var(--white);
+    }
+}
+
+
+.btn-outline {
+    color: var(--primary);
+    background: var(--white);
+
+    &:hover {
+        color: var(--white);
+        background: var(--primary);
+    }
+}

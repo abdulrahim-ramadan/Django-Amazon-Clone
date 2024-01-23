@@ -1,0 +1,83 @@
+
+
+
+
+
+.profile-card {
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    background: var(--chalk);
+    border: 1px solid var(--border);
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+        ul {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    h6 {
+        color: var(--text);
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+
+    p {
+        text-transform: capitalize
+    }
+
+    ul {
+        @include flex__center;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-50%);
+        @include cursor__transition;
+
+        li {
+            margin: 5px 0px;
+
+            button {
+                width: 30px;
+                height: 32px;
+                line-height: 32px;
+                border-radius: 6px;
+                text-align: center;
+                display: inline-block;
+                background: var(--white);
+                text-shadow: var(--primary-tshadow);
+                box-shadow: var(--primary-bshadow);
+                @include cursor__transition;
+            }
+        }
+    
+        .edit {
+            color: var(--green);
+
+            &:hover {
+                color: var(--white);
+                background: var(--green);
+            }
+        }
+    
+        .trash {
+            color: var(--red);
+
+            &:hover {
+                color: var(--white);
+                background: var(--red);
+            }
+        }
+    }
+}
+
+.profile-card.active {
+    background: var(--green-chalk);
+    border-color: var(--primary);
+}

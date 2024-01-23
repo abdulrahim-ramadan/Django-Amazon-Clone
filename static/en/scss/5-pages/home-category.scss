@@ -1,0 +1,174 @@
+
+
+
+/*========================================
+          HOME-CATEGORY PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//           SUGGEST PART STYLE
+//========================================
+.suggest-part {
+    padding: 30px 0px 22px;
+}
+
+.suggest-slider {
+    li {
+        margin: 0px 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .suggest-part {
+        padding: 20px 0px 12px;
+    }
+
+    .suggest-slider {
+        li {
+            margin: 0px 5px;
+        }
+    }
+}
+
+
+//========================================
+//           BANNER PART STYLE
+//========================================
+.banner-part {
+    margin-bottom: 25px;
+}
+
+.home-category-slider {
+    a {
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .home-category-slider {
+        a {
+            margin: 0px 5px;
+        }
+    }
+}
+
+
+//========================================
+//           PROMOTION PART STYLE
+//========================================
+.promo-img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+
+    a {
+        width: 100%;
+        
+        img {
+            width: 100%;
+            border-radius: 8px;
+            @include cursor__transition;
+    
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .promo-img {
+        margin: 12px 0px;
+    }
+}
+
+
+//========================================
+//           NEW ITEM PART STYLE
+//========================================
+.new-slider {
+    li {
+        margin: 0px 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .new-slider {
+        .product-card {
+            width: 220px;
+        }
+    }
+}
+
+
+//========================================
+//           BRAND PART STYLE
+//========================================
+.brand-slider {
+    .dandik,
+    .bamdik  {
+        top: 35%;
+    }
+}
+
+
+//========================================
+//         TESTIMONIAL PART STYLE
+//========================================
+.testimonial-slider {
+    .slick-slide {
+        opacity: 0.3;
+        transform: scale(0.75);
+        @include cursor__transition;
+    }
+
+    .slick-center {
+        opacity: 1;
+        transform: scale(1);
+        @include cursor__transition;
+    }
+
+    .dandik,
+    .bamdik {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dandik {
+        right: 50px;
+    }
+
+    .bamdik {
+        left: 50px;
+    }
+}
+
+
+
+//========================================
+//           BLOG PART STYLE
+//========================================
+.blog-slider {
+    .blog-card {
+        margin: 0px 15px 25px;
+    }
+
+    .dandik,
+    .bamdik  {
+        top: 43%;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-slider {
+        .blog-card {
+            margin: 0px 10px 25px;
+        }
+    }
+}
+

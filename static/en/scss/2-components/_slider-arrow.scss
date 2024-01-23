@@ -1,0 +1,48 @@
+
+
+
+
+.slider-arrow {
+    &:hover {
+        .dandik,
+        .bamdik {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.dandik,
+.bamdik {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    color: var(--primary);
+    background: var(--white);
+    text-shadow: var(--primary-tshadow);
+    box-shadow: var(--primary-bshadow);
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+    @include cursor__transition;
+
+     &:hover{
+        color: var(--white);
+        background: var(--primary);
+    }
+}
+
+.dandik {
+    right: -10px;
+}
+
+.bamdik{
+    left: -10px;
+}

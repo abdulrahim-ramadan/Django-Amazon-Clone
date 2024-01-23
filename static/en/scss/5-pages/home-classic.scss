@@ -1,0 +1,309 @@
+
+
+
+/*========================================
+          HOME-CLASSIC PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//           NAVBAR PART STYLE
+//========================================
+.navbar-part {
+    position: absolute;
+    top: 128px;
+    left: 0px;
+    width: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.2);
+    @include cursor__transition;
+}
+
+.header-navbar-fixed.active {
+    .navbar-part {
+        top: 69px;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .dropdown-megamenu {
+        &:hover {
+            .megamenu {
+                top: 62px;
+            }
+        }
+    }
+}
+
+.navbar-content {
+    border-top: none;
+}
+
+.navbar-link {
+    color: var(--white);
+}
+
+.dropdown-arrow {
+    &::before {
+        color: var(--white);
+    }
+}
+
+.navbar-info {
+    i,
+    p {
+        color: var(--white);
+    }
+}
+
+.dropdown-megamenu {
+    &:hover {
+        .megamenu {
+            top: 70px;
+        }
+    }
+}
+
+.megamenu {
+    top: 100px;
+}
+
+//========================================
+//           BANNER PART STYLE
+//========================================
+.home-classic-slider {
+    margin-bottom: 30px;
+    
+    .dandik {
+        right: 30px;
+    }
+
+    .bamdik {
+        left: 30px;
+    }
+}
+
+.banner-part {
+    padding: 210px 0px 150px;
+    position: relative;
+    z-index: 1;
+    background-size: cover !important;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba(0, 0, 0, 0.4);
+    }
+}
+
+.banner-content {
+    h1 {
+        text-transform: capitalize;
+        margin-bottom: 22px;
+        color: var(--white);
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 50px;
+        color: var(--white);
+    }
+}
+
+.banner-btn {
+    .btn {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-part {
+        padding: 50px 0px 60px;
+    }
+
+    .banner-content {
+        h1 {
+            font-size: 38px;
+            line-height: 48px;
+        }
+    }
+
+    .banner-btn {
+        .btn {
+            margin: 8px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .banner-part {
+        padding: 70px 0px 80px;
+    }
+
+    .banner-content {
+        h1 {
+            font-size: 42px;
+            line-height: 50px;
+        }
+    }
+}
+
+//========================================
+//           SUGGEST PART STYLE
+//========================================
+.suggest-slider {
+    li {
+        margin: 0px 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .suggest-slider {
+        li {
+            margin: 0px 5px;
+        }
+    }
+}
+
+
+//========================================
+//           PROMOTION PART STYLE
+//========================================
+.promo-img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+
+    a {
+        width: 100%;
+        
+        img {
+            width: 100%;
+            border-radius: 8px;
+            @include cursor__transition;
+    
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .promo-img {
+        margin: 12px 0px;
+    }
+}
+
+
+//========================================
+//           NEW ITEM PART STYLE
+//========================================
+.new-slider {
+    li {
+        margin: 0px 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .new-slider {
+        .product-card {
+            width: 220px;
+        }
+    }
+}
+
+//========================================
+//           NEW ITEM PART STYLE
+//========================================
+.new-slider {
+    li {
+        margin: 0px 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .new-slider {
+        .product-card {
+            width: 220px;
+        }
+    }
+}
+
+
+//========================================
+//           BRAND PART STYLE
+//========================================
+.brand-slider {
+    .dandik,
+    .bamdik  {
+        top: 35%;
+    }
+}
+
+
+//========================================
+//         TESTIMONIAL PART STYLE
+//========================================
+.testimonial-slider {
+    .slick-slide {
+        opacity: 0.3;
+        transform: scale(0.75);
+        @include cursor__transition;
+    }
+
+    .slick-center {
+        opacity: 1;
+        transform: scale(1);
+        @include cursor__transition;
+    }
+
+    .dandik,
+    .bamdik {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dandik {
+        right: 50px;
+    }
+
+    .bamdik {
+        left: 50px;
+    }
+}
+
+
+//========================================
+//           BLOG PART STYLE
+//========================================
+.blog-slider {
+    .blog-card {
+        margin: 0px 15px 25px;
+    }
+
+    .dandik,
+    .bamdik  {
+        top: 43%;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-slider {
+        .blog-card {
+            margin: 0px 10px 25px;
+        }
+    }
+}
+
+

@@ -1,0 +1,58 @@
+
+
+
+
+
+/*========================================
+            PROFILE PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+// profile image
+.profile-image {
+    text-align: center;
+
+    a {
+        border-radius: 50%;
+        border: 2px solid var(--primary);
+
+        img {
+            width: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+        }
+    }
+}
+
+.profile-btn {
+    margin-top: 33px;
+
+    a {
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 8px;
+        text-align: center;
+        text-transform: capitalize;
+        color: var(--white);
+        background: var(--primary);
+        @include cursor__transition;
+
+        &:hover {
+            background: var(--green);
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .profile-btn {
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .profile-image {
+        margin-bottom: 20px;
+    }
+}

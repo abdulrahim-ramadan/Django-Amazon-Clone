@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView , DeleteView
+from django.views.generic import ListView , DetailView
 
 from .models import Product , Brand , Review
 
@@ -9,7 +9,7 @@ class ProductList(ListView):
 
 
 
-class ProductDetail(DeleteView):
+class ProductDetail(DetailView):
     model = Product
 
 
@@ -18,5 +18,5 @@ class BrandList(ListView):
     model = Brand
 
 
-class BrandDetail(DeleteView):
+class BrandDetail(DetailView):
     model = Brand

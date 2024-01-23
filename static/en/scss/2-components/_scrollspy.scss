@@ -1,0 +1,21 @@
+
+
+
+
+.nav-pills {
+    .nav-link {
+        font-weight: 400;
+        list-style: decimal;
+    }
+
+    .nav-link.active {
+        color: var(--primary);
+        background: transparent;
+    }
+}
+
+@media (max-width: 991px) {
+    .nav {
+        margin-bottom: 30px;
+    }
+}

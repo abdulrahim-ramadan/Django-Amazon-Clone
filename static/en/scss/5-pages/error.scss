@@ -1,0 +1,50 @@
+
+
+
+/*========================================
+            ERROR PAGE STYLE
+=========================================*/
+.error-part {
+    padding: 100px 0px;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 10px;
+        color: var(--primary);
+    }
+
+    img {
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: 3px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    a {
+        font-size: 14px;
+        padding: 10px 35px;
+        border-radius: 8px;
+        letter-spacing: 0.3px;
+        color: var(--white);
+        background: var(--primary);
+        text-transform: uppercase;
+    }
+}
+
+@media (max-width: 767px) {
+    .error-part {
+        padding: 60px 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .error-part {
+        padding: 80px 0px;
+    }
+}

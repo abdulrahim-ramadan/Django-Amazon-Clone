@@ -1,0 +1,60 @@
+
+
+
+
+.account-card {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    padding: 0px 30px 30px;
+    background: var(--white);
+}
+
+.account-title {
+    padding: 18px 0px;
+    margin-bottom: 25px;
+    position: relative;
+    @include flex__center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+
+    &::before {
+        position: absolute;
+        content: "";
+        bottom: -2px;
+        left: 0px;
+        width: 50px;
+        height: 2px;
+        background: var(--primary);
+    }
+
+    h4 {
+        text-transform: capitalize;
+    }
+
+    button,
+    a {
+        border: none;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 6px;
+        letter-spacing: 0.3px;
+        padding: 5px 15px;
+        white-space: nowrap;
+        text-transform: capitalize;
+        color: var(--primary);
+        background: var(--green-chalk);
+        text-shadow: var(--primary-tshadow);
+        @include cursor__transition;
+
+        &:hover {
+            color: var(--white);
+            background: var(--primary); 
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .account-card {
+        padding: 0px 15px 15px;
+    }
+}

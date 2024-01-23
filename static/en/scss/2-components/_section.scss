@@ -1,0 +1,57 @@
+
+
+
+
+.section {
+    margin-bottom: 115px;
+}
+
+.inner-section {
+    margin-bottom: 100px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-btn-50 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.section-btn-25 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+@media (max-width: 767px) {
+    
+    .section {
+        margin-bottom: 55px;
+    }
+
+    .inner-section {
+        margin-bottom: 60px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+
+        h2 {
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .section {
+        margin-bottom: 75px;
+    }
+
+    .inner-section {
+        margin-bottom: 80px;
+    }
+}

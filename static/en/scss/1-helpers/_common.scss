@@ -1,0 +1,129 @@
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul,
+ol {
+    padding: 0px;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+span,
+label {
+    margin-bottom: 0px;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text);
+    background: var(--body);
+    font-size: var(--bodysize);
+    font-family: var(--pfamily);
+    line-height: var(--bodyheight);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    color: var(--heading);
+}
+
+h1 {
+    font-size: var(--h1size);
+    line-height: var(--h1height);
+}
+
+h2 {
+    font-size: var(--h2size);
+    line-height: var(--h2height);
+    letter-spacing: -0.3px;
+    text-transform: capitalize;
+}
+
+h3 {
+    font-size: var(--h3size);
+    line-height: var(--h3height);
+}
+
+h4 {
+    font-size: var(--h4size);
+    line-height: var(--h4height);
+}
+
+h5 {
+    font-size: var(--h5size);
+    line-height: var(--h5height);
+}
+
+h6 {
+    font-size: var(--h6size);
+    line-height: var(--h6height);
+}
+
+input,
+textarea {
+    &::placeholder {
+        font-size: 14px;
+        color: var(--gray);
+        text-transform: capitalize;
+    }
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+@media (max-width: 575px) {
+    .col {
+        padding: 0px 4px;
+    }
+}
+
+@media (max-width: 991px) {
+    .content-reverse {
+        flex-direction: column-reverse;
+    }
+}

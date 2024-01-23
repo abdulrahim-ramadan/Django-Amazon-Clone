@@ -1,0 +1,32 @@
+
+
+/*========================================
+          PRODUCT-GRID PAGE STYLE
+=========================================*/
+.product-grid {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+    }
+}
+
+.details-meta {
+    margin-bottom: 8px;
+}
+
+.details-rating  {
+    margin-bottom: 10px;
+}
+
+.details-price {
+    margin-bottom: 15px;
+}
+
+.details-add-group {
+    margin: 38px 0px 15px;
+}

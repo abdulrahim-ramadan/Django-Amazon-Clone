@@ -1,0 +1,8 @@
+/*========================================
+            COMPARE PAGE STYLE
+=========================================*/
+@media (max-width: 1199px) {
+  .compare-part .container {
+    max-width: 100%;
+  }
+}

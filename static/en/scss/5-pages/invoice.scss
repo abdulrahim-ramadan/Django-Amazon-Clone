@@ -1,0 +1,83 @@
+
+
+
+/*========================================
+            INVOICE PAGE STYLE
+=========================================*/
+@import "../1-helpers/_mixin.scss";
+
+
+.invoice-recieved {
+    text-align: left;
+    @include flex__start;
+    justify-content: space-between;
+
+    h6 {
+        text-transform: capitalize;
+
+        span {
+            display: block;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+    }
+}
+
+.invoice-details {
+    li {
+        @include flex__start;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        h6 {
+            line-height: 26px;
+            white-space: nowrap;
+
+            small {
+                font-size: 14px;
+                font-weight: 400;
+                margin-left: 3px;
+            }
+        }
+
+        p {
+            width: 250px;
+            text-align: right;
+        }
+    }
+}
+
+.table-scroll {
+    padding: 35px;
+    border-radius: 8px;
+    background: var(--white);
+}
+
+.back-home {
+    text-align: center;
+
+    a {
+        margin-top: 10px;
+        font-weight: 500;
+        color: var(--primary);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .invoice-recieved {
+        flex-wrap: wrap;
+
+        h6 {
+            margin-bottom: 25px;
+            margin-right: 25px;
+        }
+    }
+}

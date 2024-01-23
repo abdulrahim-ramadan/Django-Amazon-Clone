@@ -1,0 +1,23 @@
+
+
+
+/*========================================
+            BLOG-GRID PAGE STYLE
+=========================================*/
+.blog-card {
+    margin: 0px 2.5px 30px;
+}
+
+@media (min-width: 421px) and (max-width: 767px) {
+    .blog-grid {
+        .container {
+            max-width: 420px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .pagination {
+        margin-bottom: 30px;
+    }
+}

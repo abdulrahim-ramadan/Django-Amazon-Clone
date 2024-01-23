@@ -1,0 +1,19 @@
+
+
+
+.custom-checkbox {
+    padding-left: 25px;
+}
+
+.custom-control-label {
+    &::before,
+    &::after {
+        left: -25px;
+    }
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: none;
+}

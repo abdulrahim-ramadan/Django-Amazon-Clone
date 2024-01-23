@@ -1,0 +1,92 @@
+
+
+
+
+.payment-card {
+    padding: 25px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    background: var(--chalk);
+    border: 1px solid var(--border);
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+        button {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    img {
+        margin-bottom: 18px;
+    }
+
+    h4 {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+    }
+
+    p {
+        color: var(--heading);
+        margin-bottom: 5px;
+
+        span {
+            font-size: 20px;
+            margin-right: 15px;
+            letter-spacing: 2px;
+        }
+
+        sup {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+    }
+
+    h5 {
+        font-size: 14px;
+        line-height: 22px;
+        text-transform: capitalize;
+    }
+
+    button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        opacity: 0;
+        visibility: hidden;
+        width: 30px;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 6px;
+        text-align: center;
+        display: inline-block;
+        background: var(--white);
+        text-shadow: var(--primary-tshadow);
+        box-shadow: var(--primary-bshadow);
+        @include cursor__transition;
+    }
+
+    .trash {
+        color: var(--red);
+
+        &:hover {
+            color: var(--white);
+            background: var(--red);
+        }
+    }
+}
+
+.payment-card.active {
+    background: var(--green-chalk);
+    border-color: var(--primary);
+}
+
+@media (max-width: 575px) {
+    .payment-card p span {
+        margin-right: 8px;
+    }
+}
