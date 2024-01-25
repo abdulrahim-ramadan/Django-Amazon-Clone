@@ -1,5 +1,11 @@
 
 {% extends "base.html" %}
+{% load static %}
+
+{% block CSS  %}
+    <link rel="stylesheet" href="{% static 'en/css/brand-single.css' %}">
+{% endblock CSS  %}
+    
 {% block body  %}
         <!--=====================================
                     BANNER PART START
