@@ -160,34 +160,25 @@
                         </div>
                         <div class="product-details-frame">
                             <h3 class="frame-title">add your review</h3>
-                            <form class="review-form">
+                            <form class="review-form" method="post" action="/products/{{object.slug}}/add-review">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="star-rating">
-                                            <input type="radio" name="rating" id="star-1"><label for="star-1"></label>
-                                            <input type="radio" name="rating" id="star-2"><label for="star-2"></label>
-                                            <input type="radio" name="rating" id="star-3"><label for="star-3"></label>
-                                            <input type="radio" name="rating" id="star-4"><label for="star-4"></label>
-                                            <input type="radio" name="rating" id="star-5"><label for="star-5"></label>
+                                            <input type="radio" name="rate" value="5" id="star-1"><label for="star-1"></label>
+                                            <input type="radio" name="rate" value="4" id="star-2"><label for="star-2"></label>
+                                            <input type="radio" name="rate" value="3" id="star-3"><label for="star-3"></label>
+                                            <input type="radio" name="rate" value="2" id="star-4"><label for="star-4"></label>
+                                            <input type="radio" name="rate" value="1" id="star-5"><label for="star-5"></label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" placeholder="Describe"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email">
+                                            <textarea class="form-control" name="review" placeholder="Describe"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <button class="btn btn-inline">
+                                        <button class="btn btn-inline" type="submit">
                                             <i class="icofont-water-drop"></i>
                                             <span>drop your review</span>
                                         </button>

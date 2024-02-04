@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.views.generic import ListView , DetailView
 
 from .models import Product , Brand , Review ,ProductImages
-
+from .forms import ReviewForm
 # Create your views here.
 class ProductList(ListView):
     model = Product
@@ -44,3 +44,17 @@ class BrandDetail(ListView):
         return context
 
 
+def add_product_review(request,slug):
+    
+    product = Product.objects.get(slug=slug)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            myform = form.save(commit=False)
+            myform.user = request.user
+            myform.product = product
+            myform.save()
+
+            return redirect(f'/products/{slug}')
+    
