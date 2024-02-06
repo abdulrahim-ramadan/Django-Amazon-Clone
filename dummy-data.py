@@ -79,10 +79,10 @@ def add_review(n):
 
 
 
-#add_brand(100)
-#add_products(1000)
-#add_users(10)
-#add_review(1000)
+# add_brand(100)
+# add_products(1000)
+# add_users(10)
+# add_review(2000)
 add_products_images(2000)
 
 
