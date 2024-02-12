@@ -27,9 +27,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Snippets API",
+      title="Amazon Clone API",
       default_version='v1',
-      description="Test description",
+      description="All The Endpoints for Amazon Clone API",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="contact@snippets.local"),
       license=openapi.License(name="BSD License"),
