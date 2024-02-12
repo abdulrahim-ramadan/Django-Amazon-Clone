@@ -103,7 +103,7 @@ Django Amazon provides you with a canvas to create a unique online shopping expe
 
 Tailor your online store to your brand and style. Customize settings in the `settings.py` file to meet your specific requirements. For production deployment, ensure the utmost security by configuring a Django SECRET_KEY, database, and switching off debugging.
 
-## Contribution Guidelines
+### Contribution Guidelines
 
 We invite you to join our community and contribute to shaping the future of e-commerce. Whether you're interested in enhancing the platform, fixing bugs, or introducing new features, we welcome your valuable contributions. Please take a moment to review our [contribution guidelines](CONTRIBUTING.md).
 
