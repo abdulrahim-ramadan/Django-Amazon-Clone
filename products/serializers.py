@@ -4,11 +4,18 @@ from rest_framework import serializers
 from .models import Product , Brand , Review , ProductImages
 
 class BrandListSerialzer(serializers.ModelSerializer):
+    products_count = serializers.SerializerMethodField()
+    # count_name =serializers.SerializerMethodField(method_name='ramadan') 
     class Meta:
         model = Brand
-        fields = '__all__'  
+        fields = '__all__' 
 
+    def get_products_count(self,object) :
+        count = object.product_brand.all().count()
+        return count     
 
+    # def ramadan()
+    #   pass
 
 
 class ProductImagesSerializer(serializers.ModelSerializer):
