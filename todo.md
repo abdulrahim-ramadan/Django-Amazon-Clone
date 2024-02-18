@@ -3,7 +3,7 @@ products :
     - pagination
     - add review*
     - dummy data*
-    - API
+    - API*
     - queryset api
 
  home :
