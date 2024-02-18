@@ -19,7 +19,6 @@ class BrandListSerialzer(serializers.ModelSerializer):
 
 
 class ProductImagesSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = ProductImages
         fields = '__all__'
@@ -35,9 +34,15 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class ProductListSerializer(serializers.ModelSerializer):
     brand = serializers.StringRelatedField()
+    review_count = serializers.SerializerMethodField()
     class Meta:
         model = Product
         fields = '__all__'
+
+
+    def get_review_count (self,object):
+        review_counts = object.review_product.all().count()
+        return review_counts        
 
 
 
@@ -51,24 +56,14 @@ class ProductDetailSerializers(serializers.ModelSerializer):
         model = Product
         fields = '__all__'
 
-    def get_review_count (self, object):
+    def get_review_count (self,object):
         review_counts = object.review_product.all().count()
         return review_counts 
-
-
-class BrandDetailSerializers(serializers.ModelSerializer):
-    product_brand = ProductListSerializer(many=True)
-    products_count = serializers.SerializerMethodField()
-    class Meta :
-        model = Brand
-        fields = '__all__'
-
 
 
 
 class BrandDetailSerialzer(serializers.ModelSerializer):
     product_brand = ProductListSerializer(many=True)
-    
     products_count = serializers.SerializerMethodField()
     class Meta:
         model = Brand
