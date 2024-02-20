@@ -27,7 +27,8 @@ class Product(models.Model):
     brand = models.ForeignKey('Brand',related_name='product_brand',on_delete=models.SET_NULL,null=True)
     slug =models.SlugField(null=True,blank=True)
 
-# slug
+    def __str__(self):
+        return self.name
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
