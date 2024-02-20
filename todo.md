@@ -1,6 +1,6 @@
 products :
     - template*
-    - pagination
+    - pagination*
     - add review*
     - dummy data*
     - API*
