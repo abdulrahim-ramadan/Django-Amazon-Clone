@@ -6,7 +6,7 @@ def  home (request):
     sale = Product.objects.filter(flag ='Sale')[:10]
     new = Product.objects.filter(flag ='New')[:10]
     feature = Product.objects.filter(flag ='Feature')[:6]
-    review = Review.objects.filter(rate=5)[:3]
+    review = Review.objects.filter(rate=5)[:3] # review star
 
 
     return render(request, 'settings/home.html', {
