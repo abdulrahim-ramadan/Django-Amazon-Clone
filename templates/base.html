@@ -109,7 +109,7 @@
                     </div>
 
                     <a href="index.html" class="header-logo">
-                        <img src="images/logo.png" alt="logo">
+                        <img src="{{company_data.logo.url}}" alt="logo">
                     </a>
                     <a href="login.html" class="header-widget" title="My Account">
                         <img src="images/user.png" alt="user">
@@ -150,7 +150,7 @@
                         <div class="navbar-content">
                             <ul class="navbar-list">
                                 <li class="navbar-item dropdown">
-                                    <a class="navbar-link" href="#">home</a>
+                                    <a class="navbar-link" href="/">home</a>
                                 </li>
                                 <li class="navbar-item">
                                     <a class="navbar-link dropdown-arrow" href="/products">shop</a>
@@ -297,14 +297,14 @@
                                     <i class="icofont-ui-touch-phone"></i>
                                     <p>
                                         <small>call us</small>
-                                        <span>(+880) 183 8288 389</span>
+                                        <span>{{company_data.call_us}}/span
                                     </p>
                                 </div>
                                 <div class="navbar-info">
                                     <i class="icofont-ui-email"></i>
                                     <p>
                                         <small>email us</small>
-                                        <span>support@greeny.com</span>
+                                        <span>{{company_data.email_us}}</span>
                                     </p>
                                 </div>
                             </div>
@@ -972,11 +972,11 @@
                     <div class="col-sm-6 col-xl-3">
                         <div class="footer-widget">
                             <a class="footer-logo" href="#">
-                                <img src="images/logo.png" alt="logo">
+                                <img src="{{company_data.logo.url}}" alt="logo">
                             </a>
-                            <p class="footer-desc">Adipisci asperiores ipsum ipsa repellat consequatur repudiandae quisquam assumenda dolor perspiciatis sit ipsum dolor amet.</p>
+                            <p class="footer-desc">{{company_data.subtitle}}</p>
                             <ul class="footer-social">
-                                <li><a class="icofont-facebook" href="#"></a></li>
+                                <li><a class="icofont-facebook" href="{{company_data.facebook}}"></a></li>
                                 <li><a class="icofont-twitter" href="#"></a></li>
                                 <li><a class="icofont-linkedin" href="#"></a></li>
                                 <li><a class="icofont-instagram" href="#"></a></li>
@@ -991,20 +991,18 @@
                                 <li>
                                     <i class="icofont-ui-email"></i>
                                     <p>
-                                        <span>support@greeny.com</span>
-                                        <span>carrer@greeny.com</span>
+                                        {{company_data.emails}}
                                     </p>
                                 </li>
                                 <li>
                                     <i class="icofont-ui-touch-phone"></i>
                                     <p>
-                                        <span>+120 279 532 13</span>
-                                        <span>+120 279 532 14</span>
+                                        {{company_data.phones}}
                                     </p>
                                 </li>
                                 <li>
                                     <i class="icofont-location-pin"></i>
-                                    <p>1Hd- 50, 010 Avenue, NY 90001 United States</p>
+                                    <p>{{company_data.address}}</p>
                                 </li>
                             </ul>
                         </div>
@@ -1033,10 +1031,9 @@
                     <div class="col-sm-6 col-xl-3">
                         <div class="footer-widget">
                             <h3 class="footer-title">Download App</h3>
-                            <p class="footer-desc">Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi autem obcaecati minus ducimus totam reprehenderit exercitationem!</p>
                             <div class="footer-app">
-                                <a href="#"><img src="images/google-store.png" alt="google"></a>
-                                <a href="#"><img src="images/app-store.png" alt="app"></a>
+                                <a href="{{company_data.android_url}}"><img src="images/google-store.png" alt="google"></a>
+                                <a href="{{company_data.iphone_url}}"><img src="images/app-store.png" alt="app"></a>
                             </div>
                         </div>
                     </div>

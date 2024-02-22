@@ -1,13 +1,13 @@
 products :
     - template*
-    - pagination*
+    - pagination*      (*) Finish
     - add review*
     - dummy data*
     - API*
     - queryset api
 
  home :
-    - add home
+    - add home*
     
     - orders:
     - orders
