@@ -7,65 +7,54 @@ from .models import Product , Brand , Review , ProductImages
 from .forms import ReviewForm
 
 def  debug(requset):
-    #data = Product.objects.defer()
-    #data = Product.objects.filter(price__gt=98)
-    #data = Product.objects.filter(price__gte=98)
-    #data = Product.objects.filter(price__lt=22)
-    #data = Product.objects.filter(price__lte=22)
-    #data = Product.objects.filter(price__range=(21,22))
+    # data = Product.objects.all()
 
+    # data = Product.objects.filter(price__gt=98)
+    # data = Product.objects.filter(price__gte=98)
+    # data = Product.objects.filter(price__lt=22)
+    # data = Product.objects.filter(price__lte=22)
+    # data = Product.objects.filter(price__range=(21,22))
 
-    #data = Product.objects.filter(name__contains='Jeffrey')
-    #data = Product.objects.filter(name__startswith='Jeffrey')
-    #data = Product.objects.filter(name__endswith='Garcia')
+    # data = Product.objects.filter(name__contains='Jeffrey')
+    # data = Product.objects.filter(name__startswith='Jeffrey')
+    # data = Product.objects.filter(name__endswith='Garcia')
 
-#1
-    #data = Product.objects.filter(name__contains='Jeffrey',price__gt=50)
-
-#2
+    # data = Product.objects.filter(name__contains='Jeffrey',price__gt=50)
+    
     # data = Product.objects.filter(
-    #      Q(name__contains='Jeffrey') &
-    #      Q(price__gt=50)
-    #        )
-
-
+    #     Q(name__contains='Jeffrey') &
+    #     Q(price__gt=90)
+    #       )
 
     # data = Product.objects.filter(
-    #      Q(name__contains='Jeffrey') |
-    #      Q(price__gt=90)
-    #        )    
-
-
+    #     Q(name__contains='Jeffrey') |
+    #     Q(price__gt=50)
+    #       )
+    
     # data = Product.objects.filter(
-    #      Q(name__contains='Jeffrey') |
-    #      ~Q(price__gt=22)
-    #        )    
+    #     Q(name__contains='Jeffrey') |
+    #     ~Q(price__gt=22)
+    #       )
 
-
-
-    #data = Product.objects.order_by('price')
-    #data = Product.objects.order_by('-price')
-
-    #data = Product.objects.all()[:5]
-    #data = Product.objects.earliest('price')
+    # data = Product.objects.order_by('price')
+    # data = Product.objects.order_by('-price')
+    
+    # data = Product.objects.all()[:5]
+    # data = Product.objects.earliest('price')
     # data = Product.objects.latest('price')
-    #print(data)
+    # print(data)
 
-    # django queries are lazy ........(1 tast !).......
-    #data = Product.objects.filter(name__contains='Jeffrey').order_by('-price')      # merg queries (SQl)
+    # django queries are lazy
+    # data = Product.objects.filter(name__contains='Jeffrey').order_by('-price')      # merg queries (SQl)
 
-    # django queries are lazy 2 
-    #data = Product.objects.filter(name__contains='Jeffrey')
-    #data=data.order_by('-price')
-
+    # data = Product.objects.filter(name__contains='Jeffrey')
+    # data = data.order_by('-price')
 
     # data = Product.objects.all()
-    #data = Product.objects.values('name')
-    #data = Product.objects.values_list('name')
-    #data = Product.objects.only('name') 
-
-    data = Product.objects.defer('slug','description')     
-
+    # data = Product.objects.values('name')
+    # data = Product.objects.values_list('name')
+    # data = Product.objects.only('name')
+    data = Product.objects.defer('slug','description')
 
     return render(requset,'products/debug.html',{'data':data})
 
@@ -73,14 +62,6 @@ def  debug(requset):
 class ProductList(ListView):
     model = Product
     paginate_by = 50
-    
-
-
-'''
-    1: product detail:
-        -base funtion : get_queryset
-        - extra data : get_context_data
-'''
 
 
 
@@ -106,6 +87,7 @@ class BrandList(ListView):
 class BrandDetail(ListView):
     model = Product
     template_name = 'products/brand_detail.html' 
+    paginate_by = 20
 
     def get_queryset(self):
         brand = Brand.objects.get(slug=self.kwargs['slug'])
@@ -131,4 +113,3 @@ def add_product_review(request,slug):
             myform.save()
 
             return redirect(f'/products/{slug}')
-    
