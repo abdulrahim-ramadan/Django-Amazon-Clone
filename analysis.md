@@ -12,14 +12,22 @@ Products:
     - Video link
     - quantity
     - flag
-<<<<<<< HEAD
+--------------------
+Order:
+    - status : Recieved , Processed , Shipped m Delivered
+    - order_code
+    - total_items
+    - order_time
+    - delivery_time                       # 
+    - sub_total
+    - descount
+    - delivery_fee
+    - total
+    - delivery location
+    - product alot : quantity
 
 
 
 
 
 
-
-
-=======
->>>>>>> 10d77828aefb71fe6669b83a1dd064ae7c5541b7

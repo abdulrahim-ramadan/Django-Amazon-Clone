@@ -81,7 +81,7 @@
                 <ul class="suggest-slider slider-arrow">
                     {% for brand in brands %}
                         <li>
-                            <a class="suggest-card" href="shop-4column.html">
+                            <a class="suggest-card" href="/products/brands/{{brand.slug}}">
                                 <img src="{{brand.image.url}}" style = "width: 240px; height: 240px;"alt="suggest">
                                 <h5>{{brand}}</h5>
                             </a>
@@ -137,7 +137,7 @@
                                     <a href="product-video.html">(3)</a>
                                 </div>
                                 <h6 class="product-name">
-                                    <a href="product-video.html">{{item}}</a>
+                                    <a href="/products/{{item.slug}}">{{item}}</a>
                                 </h6>
                                 <h6 class="product-price">
                                     <span>$28{{item.price}}</span>
@@ -211,7 +211,7 @@
                             </div>
                             <div class="feature-content">
                                 <h6 class="feature-name">
-                                    <a href="product-video.html">{{item}}</a>
+                                    <a href="/products/{{item.slug}}">{{item}}</a>
                                 </h6>
                                 <div class="feature-rating">
                                     <i class="active icofont-star"></i>
@@ -219,7 +219,7 @@
                                     <i class="active icofont-star"></i>
                                     <i class="active icofont-star"></i>
                                     <i class="icofont-star"></i>
-                                    <a href="product-video.html">(3 Reviews)</a>
+                                    <a href="/products/{{item.slug}}">(3 Reviews)</a>
                                 </div>
                                 <h6 class="feature-price">
                                     <span>${{item.price}}</span>
@@ -300,10 +300,10 @@
                                             <i class="active icofont-star"></i>
                                             <i class="active icofont-star"></i>
                                             <i class="icofont-star"></i>
-                                            <a href="product-video.html">(3)</a>
+                                            <a href="/products/{{item.slug}}">(3)</a>
                                         </div>
                                         <h6 class="product-name">
-                                            <a href="product-video.html">{{item}}</a>
+                                            <a href="/products/{{item.slug}}">{{item}}</a>
                                         </h6>
                                         <h6 class="product-price">
                                             <span>${{item.price}}</span>
