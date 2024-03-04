@@ -129,7 +129,7 @@
                         <button class="header-widget header-cart" title="Cartlist">
                             <i class="fas fa-shopping-basket"></i>
                             <sup>{{cart_detail_data|length}}+</sup>
-                            <span>total price<small>$345.00</small></span>
+                            <span>total price<small>${{cart_data.cart_total}}</small></span>
                         </button>
                     </div>
                 </div>
@@ -514,7 +514,7 @@
                 </form>
                 <a class="cart-checkout-btn" href="checkout.html">
                     <span class="checkout-label">Proceed to Checkout</span>
-                    <span class="checkout-price">$369.78</span>
+                    <span class="checkout-price">{{cart_data.cart_total}}</span>
                 </a>
             </div>
         </aside>
