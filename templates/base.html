@@ -485,7 +485,7 @@
                 <button class="cart-close"><i class="icofont-close"></i></button>
             </div>
             <ul class="cart-list">
-                {% for item  in cart_detail_data %}
+                {% for item in cart_detail_data  %}
                     <li class="cart-item">
                         <div class="cart-media">
                             <a href="#"><img src="{{item.product.image.url}}" alt="product"></a>
@@ -500,7 +500,7 @@
                                 <div class="product-action">
                                     <input class="action-input" title="Quantity Number" type="text" name="quantity" value="{{item.quantity}}">
                                 </div>
-                                <h6>{{item.total}}</h6>
+                                <h6>${{item.total}}</h6>
                             </div>
                         </div>
                     </li> 
@@ -514,7 +514,7 @@
                 </form>
                 <a class="cart-checkout-btn" href="checkout.html">
                     <span class="checkout-label">Proceed to Checkout</span>
-                    <span class="checkout-price">{{cart_data.cart_total}}</span>
+                    <span class="checkout-price">${{cart_data.cart_total}}</span>
                 </a>
             </div>
         </aside>

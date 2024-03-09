@@ -88,25 +88,24 @@
                                 </ul>
                             </div>
                             <div class="details-add-group">
-                                <button class="product-add" title="Add to Cart">
-                                    <i class="fas fa-shopping-basket"></i>
-                                    <span>add to cart</span>
-                                </button>
-                                <div class="product-action">
-                                    <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                    <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                    <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
-                                </div>
+                                <form class="row" action="/orders/add-to-cart" method="post" class="row">
+                                    {% csrf_token %}
+                                    <div class="col-lg-6">
+                                        <input type="hidden" name="product_id" value="{{object.id}}">
+                                        <input class="action-input" title="Quantity Number" type="numbers" name="quantity" value="1">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <button class="product-add" type="submit" title="Add to Cart">
+                                            <i class="fas fa-shopping-basket"></i>
+                                            <span>add to cart</span>
+                                        </button>
+                                    </div>
+                                </form>   
                             </div>
                             <div class="details-action-group">
                                 <a class="details-wish wish" href="#" title="Add Your Wishlist">
                                     <i class="icofont-heart"></i>
                                     <span>add to wish</span>
-                                </a>
-                                <a class="details-compare" href="compare.html" title="Compare This Item">
-                                    <i class="fas fa-random"></i>
-                                    <span>Compare This</span>
-                                </a>
                             </div>
                         </div>
                     </div>

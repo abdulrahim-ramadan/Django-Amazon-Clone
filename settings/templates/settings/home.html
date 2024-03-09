@@ -2,13 +2,10 @@
 {% block body %}
 
 <style>
-    .myactive::before{
-        color: #ffab10;
+    .myactive::before {
+        colr: #77777;
     }
 </style>
-
-
-
         <!--=====================================
                     BANNER PART START
         =======================================-->
@@ -26,7 +23,7 @@
                                         <span>shop now</span>
                                     </a>
                                     <a class="btn btn-outline" href="offer.html">
-                                        <i class="fas fa-gift"></i>
+                                        <i class="icofont-sale-discount"></i>
                                         <span>get offer</span>
                                     </a>
                                 </div>
@@ -58,7 +55,7 @@
                                         <span>shop now</span>
                                     </a>
                                     <a class="btn btn-outline" href="offer.html">
-                                        <i class="fas fa-gift"></i>
+                                        <i class="icofont-sale-discount"></i>
                                         <span>get offer</span>
                                     </a>
                                 </div>
@@ -81,9 +78,9 @@
                 <ul class="suggest-slider slider-arrow">
                     {% for brand in brands %}
                         <li>
-                            <a class="suggest-card" href="/products/brands/{{brand.slug}}">
-                                <img src="{{brand.image.url}}" style = "width: 240px; height: 240px;"alt="suggest">
-                                <h5>{{brand}}</h5>
+                            <a class="suggest-card" href="shop-4column.html">
+                                <img src="{{brand.image.url}}" style="width: 240px;height: 240px;" alt="suggest">
+                                <h5>{{brand}}<span>34 items</span></h5>
                             </a>
                         </li>
                     {% endfor %}
@@ -109,58 +106,58 @@
                 </div>
                 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
                     {% for item in sale %}
-                    <div class="col">
-                        <div class="product-card">
-                            <div class="product-media">
-                                <div class="product-label">
-                                    <label class="label-text sale">{{item.flag}}</label>
+                        <div class="col">
+                            <div class="product-card">
+                                <div class="product-media">
+                                    <div class="product-label">
+                                        <label class="label-text sale">{{item.flag}}</label>
+                                    </div>
+                                    <button class="product-wish wish">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <a class="product-image" href="/products/{{item.slug}}">
+                                        <img src="{{item.image.url}}" alt="product">
+                                    </a>
+                                    <div class="product-widget">
+                                        <a title="Product Compare" href="compare.html" class="fas fa-random"></a>
+                                        <a title="Product Video" href="https://youtu.be/9xzcVxSBbG8" class="venobox fas fa-play" data-autoplay="true" data-vbtype="video"></a>
+                                        <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
+                                    </div>
                                 </div>
-                                <button class="product-wish wish">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <a class="product-image" href="product-video.html">
-                                    <img src="{{item.image.url}}" style="width: 198px;height: 140px;" alt="product">
-                                </a>
-                                <div class="product-widget">
-                                    <a title="Product Compare" href="compare.html" class="fas fa-random"></a>
-                                    <a title="Product Video" href="https://youtu.be/9xzcVxSBbG8" class="venobox fas fa-play" data-autoplay="true" data-vbtype="video"></a>
-                                    <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="product-rating">
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="icofont-star"></i>
-                                    <a href="product-video.html">(3)</a>
-                                </div>
-                                <h6 class="product-name">
-                                    <a href="/products/{{item.slug}}">{{item}}</a>
-                                </h6>
-                                <h6 class="product-price">
-                                    <span>$28{{item.price}}</span>
-                                </h6>
-                                <button class="product-add" title="Add to Cart">
-                                    <i class="fas fa-shopping-basket"></i>
-                                    <span>add</span>
-                                </button>
-                                <div class="product-action">
-                                    <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                    <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                    <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
+                                <div class="product-content">
+                                    <div class="product-rating">
+                                        <i class="active icofont-star"></i>
+                                        <i class="active icofont-star"></i>
+                                        <i class="active icofont-star"></i>
+                                        <i class="active icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <a href="/products/{{item.slug}}">(3)</a>
+                                    </div>
+                                    <h6 class="product-name">
+                                        <a href="/products/{{item.slug}}">{{item}}</a>
+                                    </h6>
+                                    <h6 class="product-price">
+                                        <span>$28<small>/piece</small></span>
+                                    </h6>
+                                    <button class="product-add" title="Add to Cart">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <span>{{item.price}}</span>
+                                    </button>
+                                    <div class="product-action">
+                                        <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
+                                        <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
+                                        <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     {% endfor %}
 
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-btn-25">
-                            <a href="/products/" class="btn btn-outline">
+                            <a href="/products" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
                                 <span>show more</span>
                             </a>
@@ -172,9 +169,6 @@
         <!--=====================================
                     RECENT PART END
         =======================================-->
-
-
-
 
 
         <!--=====================================
@@ -200,7 +194,7 @@
                                 <button class="feature-wish wish">
                                     <i class="fas fa-heart"></i>
                                 </button>
-                                <a class="feature-image" href="product-video.html">
+                                <a class="feature-image" href="/products/{{item.slug}}">
                                     <img src="{{item.image.url}}" alt="product">
                                 </a>
                                 <div class="feature-widget">
@@ -222,7 +216,7 @@
                                     <a href="/products/{{item.slug}}">(3 Reviews)</a>
                                 </div>
                                 <h6 class="feature-price">
-                                    <span>${{item.price}}</span>
+                                    <span>{{item.price}}</span>
                                 </h6>
                                 <p class="feature-desc">{{item.subtitle|truncatewords:10}}</p>
                                 <button class="product-add" title="Add to Cart">
@@ -238,12 +232,11 @@
                         </div>
                     </div>
                     {% endfor %}
-
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-btn-25">
-                            <a href="/products/" class="btn btn-outline">
+                            <a href="/products" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
                                 <span>show more</span>
                             </a>
@@ -255,6 +248,7 @@
         <!--=====================================
                     FEATURE PART END
         =======================================-->
+
 
 
 
@@ -273,8 +267,7 @@
                 <div class="row">
                     <div class="col">
                         <ul class="new-slider slider-arrow">
-                            
-                            {% for item in new %}
+                        {% for item in new %}
                             <li>
                                 <div class="product-card">
                                     <div class="product-media">
@@ -284,8 +277,8 @@
                                         <button class="product-wish wish">
                                             <i class="fas fa-heart"></i>
                                         </button>
-                                        <a class="product-image" href="product-video.html">
-                                            <img src="{{item.image.url}}" style ="width: 189px; height: 149px;" alt="product">
+                                        <a class="product-image" href="/products/{{item.slug}}">
+                                            <img src="{{item.image.url}}" style="width: 198px;height: 140px;" alt="product">
                                         </a>
                                         <div class="product-widget">
                                             <a title="Product Compare" href="compare.html" class="fas fa-random"></a>
@@ -306,7 +299,7 @@
                                             <a href="/products/{{item.slug}}">{{item}}</a>
                                         </h6>
                                         <h6 class="product-price">
-                                            <span>${{item.price}}</span>
+                                            <span>{{item.price}}</span>
                                         </h6>
                                         <button class="product-add" title="Add to Cart">
                                             <i class="fas fa-shopping-basket"></i>
@@ -320,14 +313,14 @@
                                     </div>
                                 </div>
                             </li>
-                            {% endfor %}
+                        {% endfor %}
                         </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="section-btn-25">
-                            <a href="/products/" class="btn btn-outline">
+                            <a href="/products" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
                                 <span>show more</span>
                             </a>
@@ -339,7 +332,6 @@
         <!--=====================================
                     NEW ITEM PART END
         =======================================-->
-
 
 
 
@@ -391,7 +383,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/01.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -407,10 +399,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -437,7 +429,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/02.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -453,10 +445,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -483,7 +475,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/03.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -499,10 +491,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -529,7 +521,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/04.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -545,10 +537,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -575,7 +567,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/05.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -591,10 +583,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -621,7 +613,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/06.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -637,10 +629,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -667,7 +659,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/07.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -683,10 +675,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -713,7 +705,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/08.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -729,10 +721,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -759,7 +751,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/09.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -775,10 +767,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -805,7 +797,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/10.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -821,10 +813,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -856,7 +848,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/11.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -872,10 +864,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -902,7 +894,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/12.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -918,10 +910,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -948,7 +940,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/13.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -964,10 +956,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -994,7 +986,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/14.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1010,10 +1002,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1040,7 +1032,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/15.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1056,10 +1048,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1086,7 +1078,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/16.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1102,10 +1094,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1132,7 +1124,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/17.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1148,10 +1140,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1178,7 +1170,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/18.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1194,10 +1186,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1224,7 +1216,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/19.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1240,10 +1232,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1270,7 +1262,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/20.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1286,10 +1278,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1321,7 +1313,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/06.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1337,10 +1329,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1367,7 +1359,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/07.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1383,10 +1375,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1413,7 +1405,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/08.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1429,10 +1421,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1459,7 +1451,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/09.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1475,10 +1467,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1505,7 +1497,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/10.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1521,10 +1513,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1551,7 +1543,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/11.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1567,10 +1559,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1597,7 +1589,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/12.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1613,10 +1605,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1643,7 +1635,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/13.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1659,10 +1651,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1689,7 +1681,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/14.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1705,10 +1697,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1735,7 +1727,7 @@
                                     <button class="product-wish wish">
                                         <i class="fas fa-heart"></i>
                                     </button>
-                                    <a class="product-image" href="product-video.html">
+                                    <a class="product-image" href="/products/{{item.slug}}">
                                         <img src="images/product/15.jpg" alt="product">
                                     </a>
                                     <div class="product-widget">
@@ -1751,10 +1743,10 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3)</a>
+                                        <a href="/products/{{item.slug}}">(3)</a>
                                     </div>
                                     <h6 class="product-name">
-                                        <a href="product-video.html">fresh green chilis</a>
+                                        <a href="/products/{{item.slug}}">fresh green chilis</a>
                                     </h6>
                                     <h6 class="product-price">
                                         <del>$34</del>
@@ -1805,18 +1797,18 @@
                 </div>
                 <div class="brand-slider slider-arrow">
                     {% for item in brands %}
-                    <div class="brand-wrap">
-                        <div class="brand-media">
-                            <img src="{{item.image.url}}" alt="brand">
-                            <div class="brand-overlay">
-                                <a href="/products/brands/{{item.slug}}"><i class="fas fa-link"></i></a>
+                        <div class="brand-wrap">
+                            <div class="brand-media">
+                                <img src="{{item.image.url}}" alt="brand">
+                                <div class="brand-overlay">
+                                    <a href="/products/brands/{{item.slug}}"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="brand-meta">
+                                <h4>{{item}}</h4>
+                                <p>(45 items)</p>
                             </div>
                         </div>
-                        <div class="brand-meta">
-                            <h4>{{item}}</h4>
-                            <p>(45 items)</p>
-                        </div>
-                    </div>
                     {% endfor %}
                 </div>
                 <div class="row">
@@ -1824,7 +1816,7 @@
                         <div class="section-btn-50">
                             <a href="/products/brands" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
-                                <span>view all brand</span>
+                                <span>view all brands</span>
                             </a>
                         </div>
                     </div>
@@ -1851,22 +1843,34 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="testimonial-slider slider-arrow">
-                            {% for item in review %}
+                        {% for item in review %}
                             <div class="testimonial-card">
                                 <i class="fas fa-quote-left"></i>
                                 <p>{{item.review}}</p>
                                 <h5>{{item.user}}</h5>
                                 <p>{{item.rate}}</p>
                                 <ul>
-                                    <li class="fas fa-star {% if item.rate > 0 %} myactive{% endif %}"></li>
-                                    <li class="fas fa-star {% if item.rate > 1 %} myactive{% endif %}"></li>
-                                    <li class="fas fa-star {% if item.rate > 2 %} myactive{% endif %}"></li>
-                                    <li class="fas fa-star {% if item.rate > 3 %} myactive{% endif %}"></li>
-                                    <li class="fas fa-star {% if item.rate > 4 %} myactive{% endif %}"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
                                 </ul>
                                 <img src="images/avatar/01.jpg" alt="testimonial">
                             </div>
-                            {% endfor %}
+                                <i class="fas fa-quote-left"></i>
+                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
+                                <h5>mahmud hasan</h5>
+                                <ul>
+                                    <li class="fas fa-star {% if item.rate > 0 %} myactive {% endif %} "></li>
+                                    <li class="fas fa-star {% if item.rate > 1 %} myactive {% endif %} "></li>
+                                    <li class="fas fa-star {% if item.rate > 2 %} myactive {% endif %} "></li>
+                                    <li class="fas fa-star {% if item.rate > 3 %} myactive {% endif %} "></li>
+                                    <li class="fas fa-star {% if item.rate > 4 %} myactive {% endif %} "></li>
+                                </ul>
+                                <img src="images/avatar/04.jpg" alt="testimonial">
+                            </div>
+                        {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -1876,4 +1880,12 @@
                    TESTIMONIAL PART END
         =======================================-->
 
+
+
+
         {% endblock body %}
+
+            
+
+
+                
