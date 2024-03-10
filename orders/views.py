@@ -3,6 +3,38 @@ from .models import Cart , CartDetail
 from products.models import Product
 
 
+def order_list(request):
+
+    return render(request,'orders/orders.html',{})
+
+
+
+def checkout(request):
+    # review order , apply coupon
+
+    return render(request,'orders/checkout.html',{})
+
+
+
+def process_payment(request):
+    # process payment $
+    pass
+
+
+def payment_success(request):
+    # if payment was success
+
+    code = ''
+
+    return render(request,'orders/success.html',{})
+
+
+def payment_failed(request):
+    # if payment was failed
+
+    return render(request,'orders/failed.html',{})
+
+
 def add_to_cart(request):
     product_id = request.POST['product_id']
     quantity = int(request.POST['quantity'])

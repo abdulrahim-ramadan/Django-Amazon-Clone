@@ -507,12 +507,7 @@
                 {% endfor %}
             </ul>
             <div class="cart-footer">
-                <button class="coupon-btn">Do you have a coupon code?</button>
-                <form class="coupon-form">
-                    <input type="text" placeholder="Enter your coupon code">
-                    <button type="submit"><span>apply</span></button>
-                </form>
-                <a class="cart-checkout-btn" href="checkout.html">
+                <a class="cart-checkout-btn" href="/orders/checkout">
                     <span class="checkout-label">Proceed to Checkout</span>
                     <span class="checkout-price">${{cart_data.cart_total}}</span>
                 </a>

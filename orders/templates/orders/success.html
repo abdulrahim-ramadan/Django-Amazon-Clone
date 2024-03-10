@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block CSS  %}
+    <link rel="stylesheet" href="{% static 'en/css/checkout.css' %}">
+{% endblock CSS  %}
+
+{% block body %}
+        <!--=====================================
+                    BANNER PART START
+        =======================================-->
+        <section class="inner-section single-banner" style="background: url(images/single-banner.jpg) no-repeat center;">
+            <div class="container">
+                <h2>checkout</h2>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Suceess Payment</li>
+                </ol>
+            </div>
+        </section>
+        <!--=====================================
+                    BANNER PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    CHECKOUT PART START
+        =======================================-->
+        <section class="inner-section checkout-part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert-info">
+                            <p>Thanks for purchasing with us , your order code is {{code}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    CHECKOUT PART END
+        =======================================-->
+
+        {% endblock body  %}
