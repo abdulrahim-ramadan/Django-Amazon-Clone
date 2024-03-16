@@ -50,66 +50,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="table-serial"><h6>01</h6></td>
-                                                <td class="table-image"><img src="images/product/01.jpg" alt="product"></td>
-                                                <td class="table-name"><h6>product name</h6></td>
-                                                <td class="table-price"><h6>$19<small>/kilo</small></h6></td>
-                                                <td class="table-brand"><h6>Fresh Company</h6></td>
-                                                <td class="table-quantity"><h6>3</h6></td>
-                                                <td class="table-action">
-                                                    <a class="view" href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                                    <a class="trash" href="#" title="Remove Wishlist"><i class="icofont-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="table-serial"><h6>02</h6></td>
-                                                <td class="table-image"><img src="images/product/02.jpg" alt="product"></td>
-                                                <td class="table-name"><h6>product name</h6></td>
-                                                <td class="table-price"><h6>$19<small>/kilo</small></h6></td>
-                                                <td class="table-brand"><h6>Radhuni Masala</h6></td>
-                                                <td class="table-quantity"><h6>5</h6></td>
-                                                <td class="table-action">
-                                                    <a class="view" href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                                    <a class="trash" href="#" title="Remove Wishlist"><i class="icofont-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="table-serial"><h6>03</h6></td>
-                                                <td class="table-image"><img src="images/product/03.jpg" alt="product"></td>
-                                                <td class="table-name"><h6>product name</h6></td>
-                                                <td class="table-price"><h6>$19<small>/kilo</small></h6></td>
-                                                <td class="table-brand"><h6>Pran Prio</h6></td>
-                                                <td class="table-quantity"><h6>2</h6></td>
-                                                <td class="table-action">
-                                                    <a class="view" href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                                    <a class="trash" href="#" title="Remove Wishlist"><i class="icofont-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="table-serial"><h6>04</h6></td>
-                                                <td class="table-image"><img src="images/product/04.jpg" alt="product"></td>
-                                                <td class="table-name"><h6>product name</h6></td>
-                                                <td class="table-price"><h6>$19<small>/kilo</small></h6></td>
-                                                <td class="table-brand"><h6>Real Food</h6></td>
-                                                <td class="table-quantity"><h6>3</h6></td>
-                                                <td class="table-action">
-                                                    <a class="view" href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                                    <a class="trash" href="#" title="Remove Wishlist"><i class="icofont-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="table-serial"><h6>05</h6></td>
-                                                <td class="table-image"><img src="images/product/05.jpg" alt="product"></td>
-                                                <td class="table-name"><h6>product name</h6></td>
-                                                <td class="table-price"><h6>$19<small>/kilo</small></h6></td>
-                                                <td class="table-brand"><h6>Rdhuni Company</h6></td>
-                                                <td class="table-quantity"><h6>7</h6></td>
-                                                <td class="table-action">
-                                                    <a class="view" href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                                    <a class="trash" href="#" title="Remove Wishlist"><i class="icofont-trash"></i></a>
-                                                </td>
-                                            </tr>
+                                            {% for item in cart_detail  %}
+                                                <tr>
+                                                    <td class="table-serial"><h6>{{forloop.counter}}</h6></td>
+                                                    <td class="table-image"><img src="{{item.product.image.url}}" alt="product"></td>
+                                                    <td class="table-name"><h6>{{item.product}}</h6></td>
+                                                    <td class="table-price"><h6>${{item.product.price}}</h6></td>
+                                                    <td class="table-brand"><h6>{{item.product.brand}}</h6></td>
+                                                    <td class="table-quantity"><h6>{{item.quantity}}</h6></td>
+                                                    <td class="table-action">
+                                                        <a class="view" href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
+                                                        <a class="trash" href="#" title="Remove Wishlist"><i class="icofont-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                           
                                         </tbody>
                                     </table>
                                 </div>
