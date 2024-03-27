@@ -7,7 +7,8 @@ from .models import Order , OrderDetail , Cart , CartDetail , Coupon
 
 def order_list(request):
     data = Order.objects.filter(user=request.user)
-    return render(request,'orders/orders.html',{'orders':data})
+    delivery_fee = DeliveryFee.objects.last().fee
+    return render(request,'orders/orders.html',{'orders':data , 'delivery_fee':delivery_fee})
 
 
 
