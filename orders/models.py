@@ -6,6 +6,8 @@ from products.models import Product
 from accounts.models import Address
 from utils.generate_code import generate_code
 
+from settings.models import DeliveryFee
+
 
 
 ORDER_STATUS = (
@@ -28,6 +30,38 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.user)
+    
+# coupon code 3 
+    
+
+    def order_sub_total(self):
+        if self.coupon:
+            return self.order_total_discount
+        
+        total = 0
+        for item in self.order_detait.all():
+            total += item.total
+        return total
+    
+    def order_total(self):
+        fee = DeliveryFee.objects.last().fee
+        return self.order_sub_total() + fee
+    
+    def order_discount(self):
+        if self.coupon:
+            after_discount = self.order_sub_total()
+
+            before_discount = 0
+            for item in self.order_detail.all():
+                before_discount += item.total
+            return before_discount - after_discount
+    
+        else:
+            return 0
+        
+    
+
+
 
 
 class OrderDetail(models.Model):
