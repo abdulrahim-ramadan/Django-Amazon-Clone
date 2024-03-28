@@ -3,6 +3,7 @@ from .models import Cart , CartDetail
 from products.models import Product
 from settings.models import DeliveryFee
 from .models import Order , OrderDetail , Cart , CartDetail , Coupon
+import datetime
 
 
 def order_list(request):
@@ -18,9 +19,36 @@ def checkout(request):
     cart = Cart.objects.get(user=request.user , status='InProgress')
     cart_detail = CartDetail.objects.filter(cart=cart)
     delivery_fee = DeliveryFee.objects.last().fee
-    discount = 0
+    discount = cart.cart_discount()
     sub_total = cart.cart_total()
     total = sub_total + delivery_fee
+
+    # coupon code (BLACKFRIDAY)
+    if request.method =='POST':
+        code = request.POST['coupon_code']
+        coupon = Coupon.objects.get(code=code)
+
+        if coupon and coupon.quantity > 0:
+            today = datetime.datetime.today().date()
+            if today >= coupon.start_date and today <=coupon.end_date:
+                coupon_value = sub_total /100*coupon.discount
+                sub_total = sub_total - coupon_value
+                total = sub_total + delivery_fee
+
+                cart.coupon = coupon
+                cart.order_total_discount = sub_total
+                cart.save()
+
+                return render(request,'orders/checkout.html',{
+                'cart_detail':cart_detail ,
+                'delivery_fee':delivery_fee ,
+                'discount':coupon_value ,
+                'sub_total':sub_total ,
+                'total' :total
+            })
+        
+
+    
 
 
 

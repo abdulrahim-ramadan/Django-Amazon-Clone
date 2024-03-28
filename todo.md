@@ -10,9 +10,9 @@ products :
     - add home*
     
     - orders:
-    - orders
-    - cart
-    - checkout
+    - orders *
+    - cart *
+    - checkout *
     - payment
     - coupons
     - API orders

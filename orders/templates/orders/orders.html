@@ -140,15 +140,15 @@
                                                     </thead>
                                                     <tbody>
                                                         {% for object in item.order_detail.all %}
-                                                            <tr>
-                                                                <td class="table-serial"><h6>01</h6></td>
-                                                                <td class="table-image"><img src="{{object.product.image.url}}" alt="product"></td>
-                                                                <td class="table-name"><h6>{{object.product}}</h6></td>
-                                                                <td class="table-price"><h6>${{object.price}}</h6></td>
-                                                                <td class="table-brand"><h6>{{object.product.brand}}</h6></td>
-                                                                <td class="table-quantity"><h6>{{object.quantity}}</h6></td>
-                                                            </tr>
-                                                        {% endfor %}
+                                                        <tr>
+                                                            <td class="table-serial"><h6>01</h6></td>
+                                                            <td class="table-image"><img src="{{object.product.image.url}}" alt="product"></td>
+                                                            <td class="table-name"><h6>{{object.product}}</h6></td>
+                                                            <td class="table-price"><h6>${{object.price}}</h6></td>
+                                                            <td class="table-brand"><h6>{{object.product.brand}}</h6></td>
+                                                            <td class="table-quantity"><h6>{{object.quantity}}</h6></td>
+                                                        </tr>
+                                                    {% endfor %}
                                                     </tbody>
                                                 </table>
                                             </div>

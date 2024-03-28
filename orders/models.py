@@ -90,11 +90,30 @@ class Cart(models.Model):
         return str(self.user)
     
     def cart_total(self):
+        
         total = 0
         for item in self.cart_detail.all():
             total += item.total
 
         return total
+    
+
+
+
+    def cart_discount(self):
+        if self.coupon:
+            after_discount = self.order_total_discount
+
+            before_discount = 0
+            for item in self.cart_detail.all():
+                before_discount += item.total
+            return round(before_discount - after_discount,2)
+        
+        else:
+            return 0
+        
+
+        
 
 class CartDetail(models.Model):
     cart = models.ForeignKey(Cart,related_name='cart_detail',on_delete=models.CASCADE)
