@@ -7,6 +7,7 @@ from .serializers import CartSerializer , CartDetailSerializer , OrderSerializer
 
 from settings.models import DeliveryFee
 from products.models import Product
+from accounts.models import Address
 import datetime
 
 
@@ -38,7 +39,39 @@ class OrderDetailAPI(generics.RetrieveAPIView):
 
 
 class CreateOrderAPI(generics.GenericAPIView):
-    pass
+    def post(self,request,*args, **kwargs):
+        user = User.objects.get(username=self.kwargs['username'])
+        code = request.data['payment_code']
+        delivery_location = Address.objects.get(id=request.data['delivery_address_id'])
+
+        cart = Cart.objects.get(user=user , status='InProgress')
+        cart_detail = CartDetail.objects.filter(cart=cart)
+
+        # create order from cart
+        new_order = Order.objects.create(
+            user = user ,
+            order_code = code ,
+            status = 'Recieved',
+            delivery_location = delivery_location,
+            coupon = cart.coupon ,
+            order_total_discount = cart.order_total_discount
+        )
+
+        # cart order_details from cart_detail
+        for object in cart_detail:
+            OrderDetail.objects.create(
+                order = new_order ,
+                product = object.product ,
+                quantity = object.quantity ,
+                price = object.product.price ,
+                total = object.quantity * object.product.price
+            )
+
+        cart.status = 'Completed'
+        cart.save() 
+
+        # send email : code 
+        return Response({'message': 'Order was created successfuly'})
 
 
 
