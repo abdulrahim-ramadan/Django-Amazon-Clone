@@ -114,7 +114,19 @@ class CartCreateUpdateDeleteAPI(generics.GenericAPIView):
 
     def post(self,request,*args, **kwargs):
         user = User.objects.get(username=self.kwargs['username'])
+        product_id = request.data['product_id']
+        quantity = int(request.data['quantity'])
 
+        # get cart
+        cart = Cart.objects.get(user=user , status='InProgress')
+
+        # create cart detail
+        product = Product.objects.get(id=product_id)
+        cart_detail, created = CartDetail.objects.get_or_create(cart=cart,product=product)
+        cart_detail.quantity = quantity
+        cart_detail.total = round(quantity * product.price,2)
+        cart_detail.save()
+        return Response({'message':'product was addedd successfully'})
 
     def delete(self,request,*args, **kwargs):
         user = User.objects.get(username=self.kwargs['username'])
@@ -124,6 +136,5 @@ class CartCreateUpdateDeleteAPI(generics.GenericAPIView):
         product.delete()
 
         #sand email
-        
         return Response({'message':'item was deleted successfully'})
 
