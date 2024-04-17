@@ -11,7 +11,22 @@ from products.models import Product
 
 
 class OrderListAPI(generics.ListAPIView):
-    pass
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+#get_queryset | get_context_data
+
+# code 1 pro
+    def get_queryset(self):
+        queryset = super(OrderListAPI, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
+    
+#  code 2 ///
+    # def list(self, request, *args, **kwargs):
+    #     queryset = super().list(request, *args, **kwargs)
+    #     queryset = queryset.filter(user=self.request.user)
+    #     return queryset  
     
 
 
