@@ -6,12 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome</h1>
-
+    
+    <H1>Welcome</H1>
 <ul>
     {% for object in data %}
-    <li>{{object}}</li>
+        <li>{{object}} - Buy price : {{object.brand}} </li>
     {% endfor %}
 </ul>
+
 </body>
 </html>

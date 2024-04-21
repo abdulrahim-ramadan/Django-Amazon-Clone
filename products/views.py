@@ -1,12 +1,19 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render , redirect
 from django.views.generic import ListView , DetailView 
 
-from django.db.models import Q 
+from django.db.models import Q , F , Func
+from django.db.models.aggregates import Avg , Sum , Count , Max , Min
 
 from .models import Product , Brand , Review , ProductImages
 from .forms import ReviewForm
 
-def  debug(requset):
+from django.views.decorators.cache import cache_page
+
+
+
+@cache_page(60 * 1)
+# Create your views here.
+def debug(request):
     # data = Product.objects.all()
 
     # data = Product.objects.filter(price__gt=98)
@@ -52,11 +59,31 @@ def  debug(requset):
 
     # data = Product.objects.all()
     # data = Product.objects.values('name')
-    # data = Product.objects.values_list('name')
+    # # data = Product.objects.values_list('name')
     # data = Product.objects.only('name')
-    data = Product.objects.defer('slug','description')
+    # data = Product.objects.defer('slug','description')
 
-    return render(requset,'products/debug.html',{'data':data})
+    # data = Product.objects.all() # R product:brand
+    # data = Product.objects.select_related('brand').all() # products:brands one table Foreignkey ,one-to-one
+    # data = Product.objects.prefetch_related('brand').all() # many-to-many
+
+    # aggregation
+    # data = Product.objects.aggregate(myavg=Avg('price'))
+    # data = Product.objects.aggregate(mysum=Sum('price'))
+    # data = Product.objects.aggregate(mymin=Min('price'))
+    # data = Product.objects.aggregate(mymax=Max('price'))
+
+    #Annotation
+    # data = Product.objects.annotate(sell_price=F('price')*1.20)
+    # data = Product.objects.annotate(
+    # sell_price=Func(F('price') *1.20 , function='ROUND')
+    # )
+
+    data = Product.objects.all()
+
+
+    return render(request,'products/debug.html',{'data':data})
+
 
 
 class ProductList(ListView):
