@@ -1,18 +1,18 @@
 from django.shortcuts import render , redirect
 from django.views.generic import ListView , DetailView 
 
-from django.db.models import Q , F , Func
+from django.db.models import Q , F , Func , DecimalField , Value , CharField
 from django.db.models.aggregates import Avg , Sum , Count , Max , Min
 
 from .models import Product , Brand , Review , ProductImages
 from .forms import ReviewForm
 
+from django.db.models.functions import Cast
 from django.views.decorators.cache import cache_page
 
 
 
 @cache_page(60 * 1)
-# Create your views here.
 def debug(request):
     # data = Product.objects.all()
 
