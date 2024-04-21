@@ -77,7 +77,7 @@ def debug(request):
     # data = Product.objects.annotate(sell_price=F('price')*1.20)
     # data = Product.objects.annotate(
     # sell_price=Func(F('price') *1.20 , function='ROUND')
-    # )
+    ## )
 
     data = Product.objects.all()
 
