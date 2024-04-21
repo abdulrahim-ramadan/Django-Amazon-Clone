@@ -14,7 +14,7 @@ from django.views.decorators.cache import cache_page
 
 @cache_page(60 * 1)
 def debug(request):
-    # data = Product.objects.all()
+    ## data = Product.objects.all()
 
     # data = Product.objects.filter(price__gt=98)
     # data = Product.objects.filter(price__gte=98)
