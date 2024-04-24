@@ -1,0 +1,117 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Dashboard</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-lg-6">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="col-lg-6">
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['products', 'Brands', 'Orders', 'Users', 'Reviews'],
+              datasets: [{
+                label: '# of Count',
+                data: ["{{products}}", "{{brands}}", "{{orders}}", "{{users}}", "{{review}}"],
+                borderWidth: 5,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)', // Red
+                  'rgba(54, 162, 235, 0.2)', // Blue
+                  'rgba(255, 206, 86, 0.2)', // Yellow
+                  'rgba(75, 192, 192, 0.2)', // Green
+                  'rgba(153, 102, 255, 0.2)', // Purple
+                ],
+                borderColor: [
+                  'rgba(255, 99, 132, 1)', // Red
+                  'rgba(54, 162, 235, 1)', // Blue
+                  'rgba(255, 206, 86, 1)', // Yellow
+                  'rgba(75, 192, 192, 1)', // Green
+                  'rgba(153, 102, 255, 1)', // Purple
+                  'rgba(255, 159, 64, 1)' // Orange
+                ]
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+          
+          
+        const ctx2 = document.getElementById('myChart2');
+      
+        new Chart(ctx2, {
+          type: 'pie',
+          data: {
+            labels: ['Sale', 'Feature', 'New'],
+            datasets: [{
+              label: '# of Products',
+              data: ["{{sale_products}}", "{{feature_products}}", "{{new_products}}"],
+              borderWidth: 5
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+</body>
+</html>

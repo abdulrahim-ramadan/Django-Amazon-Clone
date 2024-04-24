@@ -4,7 +4,7 @@ products :
     - add review*
     - dummy data*
     - API*
-    - queryset api
+    - queryset api *
 
  home :
     - add home*
@@ -13,20 +13,21 @@ products :
     - orders *
     - cart *
     - checkout *
-    - payment
-    - coupons
-    - API orders
-    - users
+    - payment*
+    - coupons*
+    - API orders*
+    - users*
     - auth
     - profile
     - user API
 
 advanced :
+    - sql
     - celery
     - redis
     - caching
-    - docker
-    - ajax
+    - docker *
+    - ajax *
     - translation
     - chart js 
     - deploy
