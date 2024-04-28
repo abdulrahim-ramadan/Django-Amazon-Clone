@@ -10,9 +10,12 @@ from .forms import ReviewForm
 from django.db.models.functions import Cast
 from django.views.decorators.cache import cache_page
 
+from .tasks import send_emails
 
 
-@cache_page(60 * 1)
+
+#@cache_page(60 * 1)
+
 def debug(request):
     ## data = Product.objects.all()
 
@@ -78,6 +81,8 @@ def debug(request):
     # data = Product.objects.annotate(
     # sell_price=Func(F('price') *1.20 , function='ROUND')
     ## )
+
+    send_emails.delay() #--------> start task calare
 
     data = Product.objects.all()
 

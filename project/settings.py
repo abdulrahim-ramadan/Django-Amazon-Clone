@@ -162,3 +162,6 @@ CACHES = {
         "LOCATION": "redis://redis:6379/0", # redis ------> Docker
     }
 }
+
+CELERY_BROKER_URL="redis://localhost:6380"
+CELERY_RESULT_BACKEND="redis://localhost:6380"
