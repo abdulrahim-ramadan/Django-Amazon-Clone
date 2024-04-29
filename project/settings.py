@@ -163,5 +163,8 @@ CACHES = {
     }
 }
 
-CELERY_BROKER_URL="redis://localhost:6380"
-CELERY_RESULT_BACKEND="redis://localhost:6380"
+# CELERY_BROKER_URL="redis://localhost:6380" ------------>run redis
+# CELERY_RESULT_BACKEND="redis://localhost:6380"
+
+CELERY_BROKER_URL="redis://redis:6379/0"            #--------> run docker
+CELERY_RESULT_BACKEND="redis://redis:6379/0"
