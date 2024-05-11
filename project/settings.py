@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,7 +48,7 @@ INSTALLED_APPS = [
     
     'settings',
     'orders',
-    'accounts',
+    
     
 ]
 
@@ -168,3 +169,14 @@ CACHES = {
 
 CELERY_BROKER_URL="redis://redis:6379/0"            #--------> run docker
 CELERY_RESULT_BACKEND="redis://redis:6379/0"
+
+
+# accounts
+
+LOGIN_REDIRECT_URL = '/'
+LOGUT_REDIRECT_URL = '/'
+
+
+#mail settings
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
