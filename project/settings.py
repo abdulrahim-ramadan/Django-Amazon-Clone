@@ -177,6 +177,13 @@ LOGIN_REDIRECT_URL = '/'
 LOGUT_REDIRECT_URL = '/'
 
 
-#mail settings
+#mail co settings
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' ---- console
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'   # service
+EMAIL_PORT = 587                              # mac errors lesson 61
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "abdalrhim19991@gmail.com" # company email
+EMAIL_HOST_PASSWORD = ""                     # Signing in to Google > App passwords
