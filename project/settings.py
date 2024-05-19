@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework.authtoken',
-    
+    # 'dj_rest_auth',
+    # 'django.contrib.sites',
+    # 'allauth',
+    # 'allauth.account',
+    # 'dj_rest_auth.registration',
+
     'rest_framework',
     'drf_yasg',
     'products',
@@ -52,7 +57,7 @@ INSTALLED_APPS = [
     
     
 ]
-
+#SITE_ID = 1
 # RestAPI Settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -66,10 +71,13 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.common.CommonMiddleware',
+    #'django.contrib.auth.backends.ModelBackend',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'allauth.account.auth_backends.AuthenticationBackend',
+    #'allauth.account.middleware.AccountMiddleware',
 ]
 
 INTERNAL_IPS = [
