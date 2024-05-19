@@ -31,3 +31,9 @@ def dashboard(request):
         'sale_products': sale_products
         
     })
+
+def signup(request):
+    pass    
+
+def user_activate(request):
+    pass
