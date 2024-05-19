@@ -71,6 +71,22 @@ def signup(request):
         
     else:
         form = SignupForm() 
+    return render(request,'registration/signup.html',{'form':form})     
+
 
 def user_activate(request,username):
-    pass
+    profile = Profile.objects.get(user__username=username)
+    
+    if request.method == 'POST':
+        code = request.POST['code']
+        if code == profile.code :
+            profile.code = ''
+            profile.save()
+            
+            # activate user 
+            user = User.objects.get(username=username)
+            user.is_active = True
+            user.save()
+            
+            return redirect('/accounts/login')
+    return render(request,'registration/activate.html',{})
