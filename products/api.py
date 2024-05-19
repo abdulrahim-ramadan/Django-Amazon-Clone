@@ -4,6 +4,7 @@ from rest_framework import generics
 
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
+from rest_framework.permissions import IsAuthenticated
 
 from .serializers import ProductListSerializer , ProductDetailSerializers , BrandListSerialzer , BrandDetailSerialzer
 from.models import Product , Brand 
@@ -29,18 +30,19 @@ class ProductListAPI(generics.ListAPIView):
     # search_fields = ['name', 'subtitle','description']
     ordering_fields = ['price', 'quantity', 'name']
     filterset_class = CustomProductFilter
+    permission_classes = [IsAuthenticated]
 
 
 class ProductDetailAPI(generics.RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductDetailSerializers
-
+    permission_classes = [IsAuthenticated]
 
 class BrandListAPI(generics.ListAPIView):
     queryset = Brand.objects.all()
     serializer_class = BrandListSerialzer
     pagination_class = CustomPagination
-
+    permission_classes = [IsAuthenticated]
 
 class BrandDetailAPI(generics.RetrieveAPIView):
     queryset = Brand.objects.all()
