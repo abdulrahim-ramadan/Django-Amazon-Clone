@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     # 'allauth',
     # 'allauth.account',
     # 'dj_rest_auth.registration',
-
+    'rosetta',
     'rest_framework',
     'drf_yasg',
     'products',
