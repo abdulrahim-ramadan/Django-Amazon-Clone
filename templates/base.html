@@ -1,7 +1,8 @@
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="en" {% if LANGUAGE_CODE == 'ar' %} dir="rtl" {% endif %} >
     <head>
         <!--=====================================
                     META TAG PART START
@@ -33,21 +34,32 @@
         <link rel="icon" href="images/favicon.png">
 
         <!-- FONTS -->
-        <link rel="stylesheet" href="{% static 'en/fonts/flaticon/flaticon.css' %}">
-        <link rel="stylesheet" href="{% static 'en/fonts/icofont/icofont.min.css' %}">
-        <link rel="stylesheet" href="{% static 'en/fonts/fontawesome/fontawesome.min.css' %}">
+        {% if LANGUAGE_CODE == 'ar' %}
+            <link rel="stylesheet" href="{% static 'ar/fonts/flaticon/flaticon.css' %}">
+            <link rel="stylesheet" href="{% static 'ar/fonts/icofont/icofont.min.css' %}">
+            <link rel="stylesheet" href="{% static 'ar/fonts/fontawesome/fontawesome.min.css' %}">
+            <link rel="stylesheet" href="{% static 'ar/vendor/venobox/venobox.min.css' %}">
+            <link rel="stylesheet" href="{% static 'ar/vendor/slickslider/slick.min.css' %}">
+            <link rel="stylesheet" href="{% static 'ar/vendor/niceselect/nice-select.min.css' %}">
+            <link rel="stylesheet" href="{% static 'ar/vendor/bootstrap/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static 'ar/css/main.css' %}">
 
-        <!-- VENDOR -->
-        <link rel="stylesheet" href="{% static 'en/vendor/venobox/venobox.min.css' %}">
-        <link rel="stylesheet" href="{% static 'en/vendor/slickslider/slick.min.css' %}">
-        <link rel="stylesheet" href="{% static 'en/vendor/niceselect/nice-select.min.css' %}">
-        <link rel="stylesheet" href="{% static 'en/vendor/bootstrap/bootstrap.min.css' %}">
+        {% else %}
+            <link rel="stylesheet" href="{% static 'en/fonts/flaticon/flaticon.css' %}">
+            <link rel="stylesheet" href="{% static 'en/fonts/icofont/icofont.min.css' %}">
+            <link rel="stylesheet" href="{% static 'en/fonts/fontawesome/fontawesome.min.css' %}">
+            <link rel="stylesheet" href="{% static 'en/vendor/venobox/venobox.min.css' %}">
+            <link rel="stylesheet" href="{% static 'en/vendor/slickslider/slick.min.css' %}">
+            <link rel="stylesheet" href="{% static 'en/vendor/niceselect/nice-select.min.css' %}">
+            <link rel="stylesheet" href="{% static 'en/vendor/bootstrap/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static 'en/css/main.css' %}">
 
-        <!-- CUSTOM -->
-        <link rel="stylesheet" href="{% static 'en/css/main.css' %}">
-        {% block CSS %}
+        {% endif %}
+
+
+        {% block css %}
             <link rel="stylesheet" href="{% static 'en/css/index.css' %}">
-        {% endblock CSS  %}
+        {% endblock css %}
     
 
         <!--=====================================
@@ -989,24 +1001,38 @@
                     JS LINK PART START
         =======================================-->
         <!-- VENDOR -->
-        <script src="{% static 'en/vendor/bootstrap/jquery-1.12.4.min.js' %}"></script>
-        <script src="{% static 'en/vendor/bootstrap/popper.min.js' %}"></script>
-        <script src="{% static 'en/vendor/bootstrap/bootstrap.min.js' %}"></script>
-        <script src="{% static 'en/vendor/countdown/countdown.min.js' %}"></script>
-        <script src="{% static 'en/vendor/niceselect/nice-select.min.js' %}"></script>
-        <script src="{% static 'en/vendor/slickslider/slick.min.js' %}"></script>
-        <script src="{% static 'en/vendor/venobox/venobox.min.js' %}"></script>
+        {% if LANGUAGE_CODE == 'ar' %}
+            <script src="{% static 'ar/vendor/bootstrap/jquery-1.12.4.min.js' %}"></script>
+            <script src="{% static 'ar/vendor/bootstrap/popper.min.js' %}"></script>
+            <script src="{% static 'ar/vendor/bootstrap/bootstrap.min.js' %}"></script>
+            <script src="{% static 'ar/vendor/countdown/countdown.min.js' %}"></script>
+            <script src="{% static 'ar/vendor/niceselect/nice-select.min.js' %}"></script>
+            <script src="{% static 'ar/vendor/slickslider/slick.min.js' %}"></script>
+            <script src="{% static 'ar/vendor/venobox/venobox.min.js' %}"></script>
+            <script src="{% static 'ar/js/nice-select.js' %}"></script>
+            <script src="{% static 'ar/js/countdown.js' %}"></script>
+            <script src="{% static 'ar/js/accordion.js' %}"></script>
+            <script src="{% static 'ar/js/venobox.js' %}"></script>
+            <script src="{% static 'ar/js/slick.js' %}"></script>
+            <script src="{% static 'ar/js/main.js' %}"></script> 
 
-        <!-- CUSTOM -->
-        <script src="{% static 'en/js/nice-select.js' %}"></script>
-        <script src="{% static 'en/js/countdown.js' %}"></script>
-        <script src="{% static 'en/js/accordion.js' %}"></script>
-        <script src="{% static 'en/js/venobox.js' %}"></script>
-        <script src="{% static 'en/js/slick.js' %}"></script>
-        <script src="{% static 'en/js/main.js' %}"></script> 
-        <!--=====================================
-                    JS LINK PART END
-        =======================================-->
+        {% else %}
+            <script src="{% static 'en/vendor/bootstrap/jquery-1.12.4.min.js' %}"></script>
+            <script src="{% static 'en/vendor/bootstrap/popper.min.js' %}"></script>
+            <script src="{% static 'en/vendor/bootstrap/bootstrap.min.js' %}"></script>
+            <script src="{% static 'en/vendor/countdown/countdown.min.js' %}"></script>
+            <script src="{% static 'en/vendor/niceselect/nice-select.min.js' %}"></script>
+            <script src="{% static 'en/vendor/slickslider/slick.min.js' %}"></script>
+            <script src="{% static 'en/vendor/venobox/venobox.min.js' %}"></script>
+            <script src="{% static 'en/js/nice-select.js' %}"></script>
+            <script src="{% static 'en/js/countdown.js' %}"></script>
+            <script src="{% static 'en/js/accordion.js' %}"></script>
+            <script src="{% static 'en/js/venobox.js' %}"></script>
+            <script src="{% static 'en/js/slick.js' %}"></script>
+            <script src="{% static 'en/js/main.js' %}"></script> 
+
+        {% endif %}
+
     </body>
 </html>
 
