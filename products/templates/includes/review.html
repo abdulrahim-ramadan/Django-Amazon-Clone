@@ -1,0 +1,25 @@
+<h3 class="frame-title">Reviews ({{product_reviews|length}})</h3>
+<ul class="review-list">
+    {% for review in product_reviews %}                          
+        <li class="review-item">
+            <div class="review-media">
+                <a class="review-avatar" href="#">
+                    <img src="images/avatar/01.jpg" alt="review">
+                </a>
+                <h5 class="review-meta">
+                    <a href="#">{{review.user}}</a>
+                    <span>June 02, 2020</span>
+                </h5>
+            </div>
+            <ul class="review-rating">
+                <li class="icofont-ui-rating"></li>
+                <li class="icofont-ui-rating"></li>
+                <li class="icofont-ui-rating"></li>
+                <li class="icofont-ui-rating"></li>
+                <li class="icofont-ui-rate-blank"></li>
+            </ul>
+            <p class="review-desc"> {{review.review}} </p>
+        </li>
+    {% endfor %}
+
+</ul>

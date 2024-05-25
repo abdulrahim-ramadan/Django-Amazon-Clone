@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block CSS  %}
+{% block css %}
     <link rel="stylesheet" href="{% static 'en/css/product-details.css' %}">
-{% endblock CSS  %}
+{% endblock css %}
+
 
 {% block body %}
-
-
 
         <!--=====================================
                     BANNER PART START
@@ -67,7 +66,7 @@
                                 <a href="#">(3 reviews)</a>
                             </div>
                             <h3 class="details-price">
-                                <span>${{product.price}}</small></span>
+                                <span>${{product.price}}</span>
                             </h3>
                             <p class="details-desc">{{product.subtitle}}</p>
                             <div class="details-list-group">
@@ -88,24 +87,27 @@
                                 </ul>
                             </div>
                             <div class="details-add-group">
-                                <form class="row" action="/orders/add-to-cart" method="post" class="row">
+                                <form id="addToCart" action="/orders/add-to-cart" method="post" class="row">
                                     {% csrf_token %}
-                                    <div class="col-lg-6">
+                                    <div class="col-6">
                                         <input type="hidden" name="product_id" value="{{object.id}}">
                                         <input class="action-input" title="Quantity Number" type="numbers" name="quantity" value="1">
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-6">
                                         <button class="product-add" type="submit" title="Add to Cart">
                                             <i class="fas fa-shopping-basket"></i>
                                             <span>add to cart</span>
                                         </button>
                                     </div>
-                                </form>   
+
+                                </form>
+
                             </div>
                             <div class="details-action-group">
                                 <a class="details-wish wish" href="#" title="Add Your Wishlist">
                                     <i class="icofont-heart"></i>
                                     <span>add to wish</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -130,36 +132,12 @@
                                 <p>{{product.description|safe}}</p>
                             </div>
                         </div>
-                        <div class="product-details-frame">
-                            <h3 class="frame-title">Reviews (2)</h3>
-                            <ul class="review-list">
-                                {% for review in product_reviews %}
-                                    <li class="review-item">
-                                    <div class="review-media">
-                                        <a class="review-avatar" href="#">
-                                            <img src="images/avatar/01.jpg" alt="review">
-                                        </a>
-                                        <h5 class="review-meta">
-                                            <a href="#">{{review.user}}</a>
-                                            <span>June 02, 2020</span>
-                                        </h5>
-                                    </div>
-                                    <ul class="review-rating">
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rate-blank"></li>
-                                    </ul>
-                                    <p class="review-desc">{{review.review}}</p>
-                                    </li>
-                                {% endfor %}
-
-                            </ul>
+                        <div class="product-details-frame" id="all-reviews">
+                            {% include 'includes/review.html' %}
                         </div>
                         <div class="product-details-frame">
                             <h3 class="frame-title">add your review</h3>
-                            <form class="review-form" method="post" action="/products/{{object.slug}}/add-review">
+                            <form id="reviewForm" class="review-form" method="post" action="/products/{{object.slug}}/add-review">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -685,4 +663,62 @@
                  PRODUCT RELATED PART END
         =======================================-->
 
-{% endblock body %}
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script>
+            
+            $(document).ready(function(){
+
+                $(document).on('submit','#reviewForm',function(event){
+                    // stop refresh
+                    event.preventDefault();
+
+                    // send form data to backend
+                    $.ajax({
+                        type: $(this).attr('method'), 
+                        url:  $(this).attr('action'),
+                        data: $(this).serialize() ,
+                        dataType: 'json',
+                        success:function(response){
+                            $('#all-reviews').html(response['result'])
+                            $('#reviewForm').trigger("reset")
+                        },
+                        error:function(){
+
+                        }
+                    })
+                })
+
+
+
+                $(document).on('submit','#addToCart',function(event){
+                    // stop refresh
+                    event.preventDefault();
+
+                    // send form data to backend
+                    $.ajax({
+                        type: $(this).attr('method'), 
+                        url:  $(this).attr('action'),   
+                        data: $(this).serialize() ,
+                        dataType: 'json',
+                        success:function(response){
+                            $('#cart_sidebar').html(response['result'])  
+
+                            $('#cart_count').text(response['cart_count'])
+                            $('#cart_total').text(response['total'])
+
+                           // $('#reviewForm').trigger("reset")
+                        },
+                        error:function(){
+
+                        }
+                    })
+                })
+
+
+
+            })
+
+        </script>
+
+
+        {% endblock body %}

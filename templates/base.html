@@ -1,3 +1,4 @@
+
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
@@ -34,6 +35,7 @@
         <link rel="icon" href="images/favicon.png">
 
         <!-- FONTS -->
+
         {% if LANGUAGE_CODE == 'ar' %}
             <link rel="stylesheet" href="{% static 'ar/fonts/flaticon/flaticon.css' %}">
             <link rel="stylesheet" href="{% static 'ar/fonts/icofont/icofont.min.css' %}">
@@ -60,8 +62,10 @@
         {% block css %}
             <link rel="stylesheet" href="{% static 'en/css/index.css' %}">
         {% endblock css %}
-    
+        
 
+        
+        
         <!--=====================================
                     CSS LINK PART END
         =======================================-->
@@ -85,7 +89,7 @@
                         <div class="header-top-select">
                             <div class="header-select">
                                 <i class="icofont-world"></i>
-                                
+
                                 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                                     <input name="next" type="hidden" value="{{ redirect_to }}">
                                     <select name="language" class="select">
@@ -152,8 +156,8 @@
                         </a>
                         <button class="header-widget header-cart" title="Cartlist">
                             <i class="fas fa-shopping-basket"></i>
-                            <sup>{{cart_detail_data|length}}+</sup>
-                            <span>total price<small>${{cart_data.cart_total}}</small></span>
+                            <sup id="cart_count">{{cart_detail_data|length}}+</sup>
+                            <span>total price<small id="cart_total">${{cart_data.cart_total}}</small></span>
                         </button>
                     </div>
                 </div>
@@ -178,142 +182,16 @@
                                 </li>
                                 <li class="navbar-item">
                                     <a class="navbar-link" href="/products">{% translate "shop" %} </a>
-
                                 </li>
-                                <li class="navbar-item ">
+                                <li class="navbar-item">
                                     <a class="navbar-link" href="/products/brands">{% translate "Brands" %} </a>
-                                    <div class="megamenu">
-                                        <div class="container megamenu-scroll">
-                                            <div class="row row-cols-5">
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">vegetables</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">carrot</a></li>
-                                                            <li><a href="#">broccoli</a></li>
-                                                            <li><a href="#">asparagus</a></li>
-                                                            <li><a href="#">cauliflower</a></li>
-                                                            <li><a href="#">eggplant</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">fruits</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Apple</a></li>
-                                                            <li><a href="#">orange</a></li>
-                                                            <li><a href="#">banana</a></li>
-                                                            <li><a href="#">strawberrie</a></li>
-                                                            <li><a href="#">watermelon</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">dairy farms</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Butter</a></li>
-                                                            <li><a href="#">Cheese</a></li>
-                                                            <li><a href="#">Milk</a></li>
-                                                            <li><a href="#">Eggs</a></li>
-                                                            <li><a href="#">cream</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">seafoods</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Lobster</a></li>
-                                                            <li><a href="#">Octopus</a></li>
-                                                            <li><a href="#">Shrimp</a></li>
-                                                            <li><a href="#">Halabos</a></li>
-                                                            <li><a href="#">Maeuntang</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">diet foods</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Salmon</a></li>
-                                                            <li><a href="#">Avocados</a></li>
-                                                            <li><a href="#">Leafy Greens</a></li>
-                                                            <li><a href="#">Boiled Potatoes</a></li>
-                                                            <li><a href="#">Cottage Cheese</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">fast foods</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">burger</a></li>
-                                                            <li><a href="#">milkshake</a></li>
-                                                            <li><a href="#">sandwich</a></li>
-                                                            <li><a href="#">doughnut</a></li>
-                                                            <li><a href="#">pizza</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">drinks</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">cocktail</a></li>
-                                                            <li><a href="#">hard soda</a></li>
-                                                            <li><a href="#">shampain</a></li>
-                                                            <li><a href="#">Wine</a></li>
-                                                            <li><a href="#">barley</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">meats</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Meatball</a></li>
-                                                            <li><a href="#">Sausage</a></li>
-                                                            <li><a href="#">Poultry</a></li>
-                                                            <li><a href="#">chicken</a></li>
-                                                            <li><a href="#">Cows</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">fishes</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">scads</a></li>
-                                                            <li><a href="#">pomfret</a></li>
-                                                            <li><a href="#">groupers</a></li>
-                                                            <li><a href="#">anchovy</a></li>
-                                                            <li><a href="#">mackerel</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">dry foods</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">noodles</a></li>
-                                                            <li><a href="#">Powdered milk</a></li>
-                                                            <li><a href="#">nut & yeast</a></li>
-                                                            <li><a href="#">almonds</a></li>
-                                                            <li><a href="#">pumpkin</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </li>
                                 <li class="navbar-item dropdown">
                                     <a class="navbar-link" href="/orders">{% translate "Orders" %} </a>
                                 </li>
-                                <li class="navbar-item">
+                                <li class="navbar-item ">
                                     <a class="navbar-link " href="/accounts/dashboard">{% translate "Dashboard" %} </a>
+
                                 </li>
                             </ul>
                             <div class="navbar-info-group">
@@ -500,43 +378,7 @@
         <!--=====================================
                   CART SIDEBAR PART START
         =======================================-->
-        <aside class="cart-sidebar">
-            <div class="cart-header">
-                <div class="cart-total">
-                    <i class="fas fa-shopping-basket"></i>
-                    <span>total item ({{cart_detail_data|length}})</span>
-                </div>
-                <button class="cart-close"><i class="icofont-close"></i></button>
-            </div>
-            <ul class="cart-list">
-                {% for item in cart_detail_data  %}
-                    <li class="cart-item">
-                        <div class="cart-media">
-                            <a href="#"><img src="{{item.product.image.url}}" alt="product"></a>
-                            <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                        <div class="cart-info-group">
-                            <div class="cart-info">
-                                <h6><a href="product-single.html">{{item.product}}</a></h6>
-                                <p>Unit Price - ${{item.product.price}}</p>
-                            </div>
-                            <div class="cart-action-group">
-                                <div class="product-action">
-                                    <input class="action-input" title="Quantity Number" type="text" name="quantity" value="{{item.quantity}}">
-                                </div>
-                                <h6>${{item.total}}</h6>
-                            </div>
-                        </div>
-                    </li> 
-                {% endfor %}
-            </ul>
-            <div class="cart-footer">
-                <a class="cart-checkout-btn" href="/orders/checkout">
-                    <span class="checkout-label">Proceed to Checkout</span>
-                    <span class="checkout-price">${{cart_data.cart_total}}</span>
-                </a>
-            </div>
-        </aside>
+
         <!--=====================================
                     CART SIDEBAR PART END
         =======================================-->
@@ -814,9 +656,13 @@
         <!--=====================================
                     PRODUCT VIEW END
         =======================================-->
-{% block body %}
 
-{% endblock body %}
+
+        {% block body %}
+            
+        {% endblock body %}
+
+
 
         <!--=====================================
                     NEWSLETTER PART START
@@ -970,6 +816,7 @@
                     <div class="col-sm-6 col-xl-3">
                         <div class="footer-widget">
                             <h3 class="footer-title">Download App</h3>
+                            <p class="footer-desc">{{company_data.mobile_app}}</p>
                             <div class="footer-app">
                                 <a href="{{company_data.android_url}}"><img src="images/google-store.png" alt="google"></a>
                                 <a href="{{company_data.iphone_url}}"><img src="images/app-store.png" alt="app"></a>
@@ -1035,6 +882,7 @@
 
     </body>
 </html>
+
 
 
 
