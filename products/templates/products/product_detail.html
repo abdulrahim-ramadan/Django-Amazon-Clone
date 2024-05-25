@@ -697,10 +697,10 @@
                     // send form data to backend
                     $.ajax({
                         type: $(this).attr('method'), 
-                        url:  $(this).attr('action'),   
+                        url:  $(this).attr('action'),   // add to card ajax
                         data: $(this).serialize() ,
                         dataType: 'json',
-                        success:function(response){
+                        success:function(response){ 
                             $('#cart_sidebar').html(response['result'])  
 
                             $('#cart_count').text(response['cart_count'])

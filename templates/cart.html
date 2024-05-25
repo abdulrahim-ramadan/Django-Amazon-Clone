@@ -1,0 +1,36 @@
+<div class="cart-header">
+    <div class="cart-total">
+        <i class="fas fa-shopping-basket"></i>
+        <span>total item ({{cart_detail_data|length}})</span>
+    </div>
+    <button class="cart-close"><i class="icofont-close"></i></button>
+</div>
+<ul class="cart-list">
+    {% for item in cart_detail_data %}      
+        <li class="cart-item">
+            <div class="cart-media">
+                <a href="#"><img src="{{item.product.image.url}}" alt="product"></a>
+                <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
+            </div>
+            <div class="cart-info-group">
+                <div class="cart-info">
+                    <h6><a href="product-single.html">{{item.product}}</a></h6>
+                    <p>Unit Price - ${{item.product.price}}</p>
+                </div>
+                <div class="cart-action-group">
+                    <div class="product-action">
+                        <input class="action-input" title="Quantity Number" type="text" name="quantity" value="{{item.quantity}}">
+                    </div>
+                    <h6>${{item.total}}</h6>
+                </div>
+            </div>
+        </li>
+    {% endfor %} 
+
+</ul>
+<div class="cart-footer">
+    <a class="cart-checkout-btn" href="/orders/checkout">
+        <span class="checkout-label">Proceed to Checkout</span>
+        <span class="checkout-price">${{cart_data.cart_total}}</span>
+    </a>
+</div>

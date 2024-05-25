@@ -5,6 +5,9 @@ from settings.models import DeliveryFee
 from .models import Order , OrderDetail , Cart , CartDetail , Coupon
 import datetime
 
+from django.http import JsonResponse
+from django.template.loader import render_to_string
+
 
 def order_list(request):
     data = Order.objects.filter(user=request.user)
@@ -95,4 +98,13 @@ def add_to_cart(request):
     cart_detail.total = round(quantity * product.price,2)
     cart_detail.save()
 
-    return redirect(f'/products/{product.slug}')
+    cart = Cart.objects.get(user=request.user , status='InProgress')
+    cart_detail = CartDetail.objects.filter(cart=cart)
+    
+    total = cart.cart_total()
+    cart_count = len(cart_detail)
+    
+    page = render_to_string('cart.html',{'cart_data':cart , 'cart_detail_data':cart_detail})
+    return JsonResponse({'result':page , 'total':total ,'cart_count' :cart_count})
+
+
