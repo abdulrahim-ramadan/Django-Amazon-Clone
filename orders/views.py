@@ -27,6 +27,7 @@ def checkout(request):
     total = sub_total + delivery_fee
 
     # coupon code (BLACKFRIDAY)
+    
     if request.method =='POST':
         code = request.POST['coupon_code']
         coupon = Coupon.objects.get(code=code)
@@ -41,6 +42,7 @@ def checkout(request):
                 cart.coupon = coupon
                 cart.order_total_discount = sub_total
                 cart.save()
+
 
                 return render(request,'orders/checkout.html',{
                 'cart_detail':cart_detail ,
@@ -58,7 +60,7 @@ def checkout(request):
     return render(request,'orders/checkout.html',{
         'cart_detail':cart_detail ,
         'delivery_fee':delivery_fee ,
-        'discount':discount ,
+        'discount':discount ,                # was ist das code 
         'sub_total':sub_total ,
         'total' :total
     })
@@ -89,22 +91,30 @@ def add_to_cart(request):
     quantity = int(request.POST['quantity'])
 
     # get cart
+
     cart = Cart.objects.get(user=request.user , status='InProgress')
 
     # create cart detail
+
     product = Product.objects.get(id=product_id)
     cart_detail, created = CartDetail.objects.get_or_create(cart=cart,product=product)
     cart_detail.quantity = quantity
     cart_detail.total = round(quantity * product.price,2)
     cart_detail.save()
+     
+     # ajax code 
 
     cart = Cart.objects.get(user=request.user , status='InProgress')
     cart_detail = CartDetail.objects.filter(cart=cart)
     
-    total = cart.cart_total()
+    total = cart.cart_total()           
     cart_count = len(cart_detail)
     
     page = render_to_string('cart.html',{'cart_data':cart , 'cart_detail_data':cart_detail})
     return JsonResponse({'result':page , 'total':total ,'cart_count' :cart_count})
+
+
+
+
 
 

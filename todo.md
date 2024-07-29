@@ -30,4 +30,4 @@ advanced :
     - ajax *
     - translation
     - chart js 
-    - deploy
+    - deploy*

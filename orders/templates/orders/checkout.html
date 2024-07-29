@@ -1,11 +1,14 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
-{% block CSS  %}
+{% block css %}
     <link rel="stylesheet" href="{% static 'en/css/checkout.css' %}">
-{% endblock CSS  %}
+{% endblock css %}
+
 
 {% block body %}
+    
         <!--=====================================
                     BANNER PART START
         =======================================-->
@@ -50,9 +53,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {% for item in cart_detail  %}
+                                            {% for item in cart_detail %}                                 
                                                 <tr>
-                                                    <td class="table-serial"><h6>{{forloop.counter}}</h6></td>
+                                                    <td class="table-serial"><h6>{{ forloop.counter }}</h6></td>
                                                     <td class="table-image"><img src="{{item.product.image.url}}" alt="product"></td>
                                                     <td class="table-name"><h6>{{item.product}}</h6></td>
                                                     <td class="table-price"><h6>${{item.product.price}}</h6></td>
@@ -64,38 +67,22 @@
                                                     </td>
                                                 </tr>
                                             {% endfor %}
-                                           
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="chekout-coupon">
                                     <button class="coupon-btn">Do you have a coupon code?</button>
-                                    <form class="coupon-form" method='post'>
+                                    <form class="coupon-form" method="post">
                                         {% csrf_token %}
                                         <input type="text" name="coupon_code" placeholder="Enter your coupon code">
                                         <button type="submit"><span>apply</span></button>
                                     </form>
                                 </div>
-                                <div class="checkout-charge">
-                                    <ul>
-                                        <li>
-                                            <span>Sub total</span>
-                                            <span>${{sub_total}}</span>
-                                        </li>
-                                        <li>
-                                            <span>delivery fee</span>
-                                            <span>${{delivery_fee}}</span>
-                                        </li>
-                                        <li>
-                                            <span>discount</span>
-                                            <span>${{discount}}</span>
-                                        </li>
-                                        <li>
-                                            <span>Total<small>(Incl. VAT)</small></span>
-                                            <span>${{total}}</span>
-                                        </li>
-                                    </ul>
+
+                                <div class="checkout-charge" id = "code-apply" >
+                                    {% include "include/coupon_apply.html" %}
                                 </div>
+                                    
                             </div>
                         </div>
                     </div>
@@ -424,5 +411,50 @@
         <!--=====================================
                     MODAL EDIT FORM END
         =======================================-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://js.stripe.com/v3/"></script>
 
-        {% endblock body  %}
+        <script>
+            function buy(event){
+                event.preventDefault();
+
+                stripe = Stripe('{{pub_key}}')
+
+                fetch('/orders/checkout/payment',{
+                    method:'POST',
+                    headers:{
+                        'X-CSRFToken': '{{ csrf_token }}',
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function (response){
+                    return response.json()
+                }).then(function(session){
+                    return stripe.redirectToCheckout({'sessionId':session.session.id})
+                })
+            }
+
+            $(document).ready(function(){
+                $(document).on('submit', '#code-apply', function(event) {
+                    event.preventDefault();
+                    $.ajax({
+                        type: $(this).attr('method'),
+                        url: $(this).attr('action'),
+                        data: $(this).serialize(),
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.result.success){
+                                $('#apply-coupon-section').html(response['result']);
+
+                                alert('Coupon applied successfully')
+                            }
+                            
+                        },
+                        error: function() {
+                            // Handle error
+                        }
+                    });
+                });
+            });
+        </script>
+
+        {% endblock body %}

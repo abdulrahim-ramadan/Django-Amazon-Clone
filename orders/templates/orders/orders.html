@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block CSS  %}
+{% block css %}
     <link rel="stylesheet" href="{% static 'en/css/orderlist.css' %}">
-{% endblock CSS  %}
+{% endblock css %}
+
 
 {% block body %}
 
@@ -49,7 +50,7 @@
                 <div class="row">
                     <div class="col-lg-12">
 
-                        {% for item in orders %}
+                        {% for item in orders %}                
                             <div class="orderlist">
                                 <div class="orderlist-head">
                                     <h5>order#01</h5>
@@ -64,15 +65,15 @@
                                                         <i class="icofont-check"></i>
                                                         <span>order recieved</span>
                                                     </li>
-                                                    <li class="order-track-item {% if  item.status == 'Processed' or item.status == 'Shipped' or item.status == 'Delivered' %} active {% endif %}">
+                                                    <li class="order-track-item {% if item.status == 'Processed' or item.status == 'Shipped' or item.status == 'Delivered' %} active {% endif %}">
                                                         <i class="icofont-{% if item.status == 'Processed' or item.status == 'Shipped' or item.status == 'Delivered' %}check{% else %}close{% endif %}"></i>
                                                         <span>order processed</span>
                                                     </li>
-                                                    <li class="order-track-item {% if  item.status == 'Shipped' or item.status == 'Delivered' %} active {% endif %}">
+                                                    <li class="order-track-item {% if item.status == 'Shipped' or item.status == 'Delivered' %} active {% endif %}">
                                                         <i class="icofont-{% if item.status == 'Shipped' or item.status == 'Delivered' %}check{% else %}close{% endif %}"></i>
                                                         <span>order shipped</span>
                                                     </li>
-                                                    <li class="order-track-item {% if  item.status == 'Delivered' %} active {% endif %}">
+                                                    <li class="order-track-item {% if item.status == 'Delivered' %} active {% endif %}">
                                                         <i class="icofont-{% if item.status == 'Delivered' %}check{% else %}close{% endif %}"></i>
                                                         <span>order delivered</span>
                                                     </li>
@@ -139,16 +140,16 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        {% for object in item.order_detail.all %}
-                                                        <tr>
-                                                            <td class="table-serial"><h6>01</h6></td>
-                                                            <td class="table-image"><img src="{{object.product.image.url}}" alt="product"></td>
-                                                            <td class="table-name"><h6>{{object.product}}</h6></td>
-                                                            <td class="table-price"><h6>${{object.price}}</h6></td>
-                                                            <td class="table-brand"><h6>{{object.product.brand}}</h6></td>
-                                                            <td class="table-quantity"><h6>{{object.quantity}}</h6></td>
-                                                        </tr>
-                                                    {% endfor %}
+                                                        {% for object in item.order_detail.all %}                                              
+                                                            <tr>
+                                                                <td class="table-serial"><h6>01</h6></td>
+                                                                <td class="table-image"><img src="{{object.product.image.url}}" alt="product"></td>
+                                                                <td class="table-name"><h6>{{object.product}}</h6></td>
+                                                                <td class="table-price"><h6>${{object.price}}</h6></td>
+                                                                <td class="table-brand"><h6>{{object.product.brand}}</h6></td>
+                                                                <td class="table-quantity"><h6>{{object.quantity}}</h6></td>
+                                                            </tr>
+                                                        {% endfor %}
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -156,7 +157,8 @@
                                     </div>
                                 </div>
                             </div>
-                        {% endfor %} 
+                        {% endfor %}
+
                     </div>
                 </div>
                 <div class="row">
@@ -185,8 +187,9 @@
         <!--=====================================
                     ORDERLIST PART END
         =======================================-->
-        
-        {% endblock body  %}
+
+
+        {% endblock body %}
 
 
 

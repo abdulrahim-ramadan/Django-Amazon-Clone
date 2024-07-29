@@ -1,12 +1,13 @@
 
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block CSS  %}
+{% block css %}
     <link rel="stylesheet" href="{% static 'en/css/brand-single.css' %}">
-{% endblock CSS  %}
-    
-{% block body  %}
+{% endblock css %}
+
+{% block body %}
+
         <!--=====================================
                     BANNER PART START
         =======================================-->
@@ -75,55 +76,54 @@
                     </div>
                 </div>
                 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-5">
-                    {% for item in product_list %}
+                    {% for item in product_list %}                      
                         <div class="col">
-                        <div class="product-card">
-                            <div class="product-media">
-                                <div class="product-label">
-                                    <label class="label-text new">{{item.flag}}</label>
+                            <div class="product-card">
+                                <div class="product-media">
+                                    <div class="product-label">
+                                        <label class="label-text new">{{item.flag}}</label>
+                                    </div>
+                                    <button class="product-wish wish">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <a class="product-image" href="product-video.html">
+                                        <img src="{{item.image.url}}" alt="product">
+                                    </a>
+                                    <div class="product-widget">
+                                        <a title="Product Compare" href="compare.html" class="fas fa-random"></a>
+                                        <a title="Product Video" href="https://youtu.be/9xzcVxSBbG8" class="venobox fas fa-play" data-autoplay="true" data-vbtype="video"></a>
+                                        <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
+                                    </div>
                                 </div>
-                                <button class="product-wish wish">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <a class="product-image" href="product-video.html">
-                                    <img src="{{item.image.url}}" alt="product">
-                                </a>
-                                <div class="product-widget">
-                                    <a title="Product Compare" href="compare.html" class="fas fa-random"></a>
-                                    <a title="Product Video" href="https://youtu.be/9xzcVxSBbG8" class="venobox fas fa-play" data-autoplay="true" data-vbtype="video"></a>
-                                    <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="product-rating">
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="icofont-star"></i>
-                                    <a href="product-video.html">(3)</a>
-                                </div>
-                                <h6 class="product-name">
-                                    <a href="/products/{{item.slug}}">{{item}}</a>
-                                </h6>
-                                <h6 class="product-price">
-                                    <del></del>
-                                    <span>${{item.price}}</span>
-                                </h6>
-                                <button class="product-add" title="Add to Cart">
-                                    <i class="fas fa-shopping-basket"></i>
-                                    <span>add</span>
-                                </button>
-                                <div class="product-action">
-                                    <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                    <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                    <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
+                                <div class="product-content">
+                                    <div class="product-rating">
+                                        <i class="active icofont-star"></i>
+                                        <i class="active icofont-star"></i>
+                                        <i class="active icofont-star"></i>
+                                        <i class="active icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <a href="product-video.html">(3)</a>
+                                    </div>
+                                    <h6 class="product-name">
+                                        <a href="/products/{{item.slug}}">{{item}}</a>
+                                    </h6>
+                                    <h6 class="product-price">
+                                        <span>${{item.price}}</span>
+                                    </h6>
+                                    <button class="product-add" title="Add to Cart">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <span>add</span>
+                                    </button>
+                                    <div class="product-action">
+                                        <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
+                                        <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
+                                        <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
-                    
+                    {% endfor %}
+
                 </div>
                 {% if is_paginated %}
                     <div class="row">
@@ -134,38 +134,39 @@
 
                                     {% if page_obj.has_previous %}
                                         <li class="page-item">
-                                            <a class="page-link" href="?page={{page_obj.previos_page_number}}">
+                                            <a class="page-link" href="?page={{page_obj.previous_page_number}}">
                                                 <i class="fas fa-long-arrow-alt-left"></i>
                                             </a>
                                         </li>
-                                        {% endif %}
+                                    {% endif %}
 
-                                        {% for i in paginator.page_range %}
-                                            {% if page_obj.number == i %}
-                                                <li class="page-item"><a class="page-link active" href="#">{{i}}</a></li>
+                                    {% for i in paginator.page_range  %}
+                                        {% if page_obj.number == i %}
+                                            <li class="page-item"><a class="page-link active" href="#">{{i}}</a></li>
                                         {% elif i > page_obj.number|add:'-4' and i < page_obj.number|add:'4' %}
                                             <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
                                         {% endif %}
-
+                                        
                                     {% endfor %}
-
-                                    {% if page_obj.has_next  %}
-                                    <li class="page-item">
-                                            <a class="page-link" href="#">
+                                        
+                                    {% if page_obj.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{page_obj.next_page_number}}">
                                                 <i class="fas fa-long-arrow-alt-right"></i>
                                             </a>
-                                        </li>
-                                    {% endif %}    
+                                        </li>                                        
+                                    {% endif %}
 
 
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 {% endif %}
             </div>
         </section>
         <!--=====================================
                     SHOP PART END
         =======================================-->
+        
         {% endblock body %}

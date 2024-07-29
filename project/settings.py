@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4t+&i#5y3tp!cje5($y3id1of77!$j0c-hk&8qk1^9t@pxkdoe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] 
 
 
 # Application definition
@@ -68,6 +68,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     "django.middleware.locale.LocaleMiddleware",
     'django.middleware.common.CommonMiddleware',
@@ -211,3 +212,5 @@ EMAIL_PORT = 587                              # mac errors lesson 61
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "abdalrhim19991@gmail.com" # company email
 EMAIL_HOST_PASSWORD = ""                     # Signing in to Google > App passwords
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
