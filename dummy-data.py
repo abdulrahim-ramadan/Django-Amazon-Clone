@@ -78,10 +78,9 @@ def add_review(n):
     print(f"{n} Reviews Was Added")
 
 
-
+add_users(10)
 add_brand(100)
 add_products(50)
-add_users(1000)
 add_review(200)
 add_products_images(200)
 
