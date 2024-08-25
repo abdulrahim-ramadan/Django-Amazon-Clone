@@ -121,24 +121,19 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DBURL'),conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
-# DATABASES['default'] = dj_database_url.config(
-#     conn_max_age=600,
-#     conn_health_checks=True,
-# )
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get('DBURL'),conn_max_age=600)
+# }
+
 
 
 # Password validation
@@ -235,3 +230,8 @@ EMAIL_HOST_USER = "abdalrhim19991@gmail.com" # company email
 EMAIL_HOST_PASSWORD = ""                     # Signing in to Google > App passwords
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+# strip 
+STRIP_API_KEY_PUBLISHABLE ='pk_test_51Ppf6f090PagC1n5G2NYvGr21qpxgRMGBqebepSv3rVjXkMpTrGefcJOcPVK9WiqnUymGgvLL88mu7dxJMae698w005N93N42E'  
+STRIPE_API_KEY_SECRET='sk_test_51Ppf6f090PagC1n5o3qtQFJZiQlj2wl8yJutzAGdQcJ6AlIR1xPiFyDcp3TAN9JJpDmD83CKgViKmE3y2ec7nL8a00TNh7OByy'     

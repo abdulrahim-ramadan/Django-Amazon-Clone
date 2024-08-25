@@ -256,7 +256,7 @@
                                 <label for="checkout-check">By making this purchase you agree to our <a href="#">Terms and Conditions</a>.</label>
                             </div>
                             <div class="checkout-proced">
-                                <a href="invoice.html" class="btn btn-inline">proced to checkout</a>
+                                <button class="btn btn-inline" onclick="buy(event)">proced to checkout </button>
                             </div>
                         </div>
                     </div>
@@ -411,7 +411,7 @@
         <!--=====================================
                     MODAL EDIT FORM END
         =======================================-->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://js.stripe.com/v3/"></script>
 
         <script>
@@ -455,6 +455,39 @@
                     });
                 });
             });
+        </script> {% endcomment %}
+        
+        <!--=====================================
+                    MODAL 
+        =======================================-->
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+
+            function buy(event){
+                event.preventDefault();
+
+                stripe = Stripe('{{pub_key}}')
+
+                fetch('/orders/checkout/processce_payment',{
+                    method: 'POST',
+                    headers:{
+                        'X-CSRFToken': '{{csrf_token}}',
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function (response){
+                    return response.json()
+                }).then(function (session){
+                    return stripe.redirectToCheckout({'sessionId':session.session.id})
+                })
+
+            }
+
+
+
         </script>
 
+
+
         {% endblock body %}
+
+        
