@@ -112,6 +112,33 @@ def payment_success(request):
     # if payment was success
 
     code = request.session.get('order_code')
+    cart = Cart.objects.get(user=request.user , status='InProgress')
+    cart_detail = CartDetail.objects.filter(cart=cart)
+    
+    # cart --> order 
+    new_order = Order.objects.create(
+        user = request.user,
+        order_code = code ,
+        coupon = cart.coupon , 
+        order_total_discount=cart.order_total_discount
+    )
+    
+    
+    # cart_detail ---> order_detail
+
+    for object in cart_detail:
+        OrderDetail.objects.create(
+            order=new_order,
+            product=object.product,
+            quantity = object.quantity,
+            price = object.product.price,
+            total = object.quantity * object.product.price
+        )
+        
+    cart.status = 'Completed'
+    cart.save()
+
+
 
     return render(request,'orders/success.html',{'code':code})
 
