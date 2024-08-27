@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-25 22:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\products\models.py:18
+msgid "Product Name"
+msgstr "اسم المنتج"
+
+#: .\products\models.py:19
+msgid "Image"
+msgstr "صورة"
+
+#: .\products\models.py:20
+msgid "Price"
+msgstr "السعر"
+
+#: .\products\models.py:21
+msgid "Subtitle"
+msgstr "العنوان الفرعي"
+
+#: .\products\models.py:22
+msgid "Description"
+msgstr "الوصف"
+
+#: .\products\models.py:23
+msgid "SKU"
+msgstr "الكود"
+
+#: .\products\models.py:24
+msgid "Video"
+msgstr "فيديو"
+
+#: .\products\models.py:25
+msgid "Quantity"
+msgstr "الكمية"
+
+#: .\products\models.py:26
+msgid "Flag"
+msgstr "العلم"
+
+#: .\templates\base.html:181
+msgid "home"
+msgstr "الصفحه الريسيه"
+
+#: .\templates\base.html:184
+msgid "shop"
+msgstr "تسوق"
+
+#: .\templates\base.html:187
+msgid "Brands"
+msgstr "العلامات التجاريه"
+
+#: .\templates\base.html:190
+msgid "Orders"
+msgstr "الطلبات"
+
+#: .\templates\base.html:193
+msgid "Dashboard"
+msgstr "لوحه التحكم"

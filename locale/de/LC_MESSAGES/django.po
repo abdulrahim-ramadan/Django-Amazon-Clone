@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-25 22:43+0200\n"
+"PO-Revision-Date: 2024-05-14 19:49+0000\n"
+"Last-Translator:   <contact.mahmoudahmed@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\products\models.py:18
+msgid "Product Name"
+msgstr "Produktname"
+
+#: .\products\models.py:19
+msgid "Image"
+msgstr "Bild"
+
+#: .\products\models.py:20
+msgid "Price"
+msgstr "Preis"
+
+#: .\products\models.py:21
+msgid "Subtitle"
+msgstr "Untertitel"
+
+#: .\products\models.py:22
+msgid "Description"
+msgstr "Beschreibung"
+
+#: .\products\models.py:23
+msgid "SKU"
+msgstr "SKUU"
+
+#: .\products\models.py:24
+msgid "Video"
+msgstr ""
+
+#: .\products\models.py:25
+msgid "Quantity"
+msgstr "Menge"
+
+#: .\products\models.py:26
+msgid "Flag"
+msgstr "Flagge"
+
+#: .\templates\base.html:181
+msgid "home"
+msgstr ""
+
+#: .\templates\base.html:184
+msgid "shop"
+msgstr ""
+
+#: .\templates\base.html:187
+msgid "Brands"
+msgstr ""
+
+#: .\templates\base.html:190
+msgid "Orders"
+msgstr ""
+
+#: .\templates\base.html:193
+msgid "Dashboard"
+msgstr ""
