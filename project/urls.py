@@ -53,8 +53,8 @@ urlpatterns = [
     path('', include('settings.urls')),
 
 
-    #path('rest-auth/', include('dj_rest_auth.urls')),
-    #path('rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('rest-auth/', include('dj_rest_auth.urls')),
+    path('rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path("i18n/", include("django.conf.urls.i18n")),
     path('rosetta/', include('rosetta.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

@@ -47,11 +47,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework.authtoken',
-    # 'dj_rest_auth',
-    # 'django.contrib.sites',
-    # 'allauth',
-    # 'allauth.account',
-    # 'dj_rest_auth.registration',
+
+    'dj_rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'dj_rest_auth.registration',
+    'allauth.socialaccount',
+
     'rosetta',
     'rest_framework',
     'drf_yasg',
@@ -64,7 +67,15 @@ INSTALLED_APPS = [
     
     
 ]
-#SITE_ID = 1
+
+REST_AUTH = {
+    'USE_JWT': True,
+    'JWT_AUTH_COOKIE': 'jwt-auth',
+}
+
+SITE_ID = 1
+
+
 # RestAPI Settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -81,12 +92,12 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
-    # 'django.contrib.auth.backends.ModelBackend',
+    #'django.contrib.auth.backends.ModelBackend',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'allauth.account.auth_backends.AuthenticationBackend',
-    # 'allauth.account.middleware.AccountMiddleware',
+    #'allauth.account.auth_backends.AuthenticationBackend',
+    'allauth.account.middleware.AccountMiddleware',
 
 ]
 
@@ -198,12 +209,12 @@ REST_FRAMEWORK = {
 
 
 # Redis Cache
-CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": "redis://redis:6379/0", # redis ------> Docker
-    }
-}
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django.core.cache.backends.redis.RedisCache",
+#         "LOCATION": "redis://redis:6379/0", # redis ------> Docker
+#     }
+# }
 
 # CELERY_BROKER_URL="redis://localhost:6380" ------------>run redis
 # CELERY_RESULT_BACKEND="redis://localhost:6380"
@@ -222,16 +233,16 @@ LOGUT_REDIRECT_URL = '/'
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' ---- console
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'   # service
-EMAIL_PORT = 587                              # mac errors lesson 61
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "abdalrhim19991@gmail.com" # company email
-EMAIL_HOST_PASSWORD = ""                     # Signing in to Google > App passwords
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_HOST = 'smtp.gmail.com'   # service
+#EMAIL_PORT = 587                              # mac errors lesson 61
+#EMAIL_USE_TLS = True
+#EMAIL_HOST_USER = "abdalrhim19991@gmail.com" # company email
+#EMAIL_HOST_PASSWORD = ""                     # Signing in to Google > App passwords
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # strip 
-STRIP_API_KEY_PUBLISHABLE ='pk_test_51Ppf6f090PagC1n5G2NYvGr21qpxgRMGBqebepSv3rVjXkMpTrGefcJOcPVK9WiqnUymGgvLL88mu7dxJMae698w005N93N42E'  
-STRIPE_API_KEY_SECRET='sk_test_51Ppf6f090PagC1n5o3qtQFJZiQlj2wl8yJutzAGdQcJ6AlIR1xPiFyDcp3TAN9JJpDmD83CKgViKmE3y2ec7nL8a00TNh7OByy'     
+STRIP_API_KEY_PUBLISHABLE =''  
+STRIPE_API_KEY_SECRET=''     
