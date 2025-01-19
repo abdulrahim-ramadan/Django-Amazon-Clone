@@ -237,7 +237,7 @@ LOGUT_REDIRECT_URL = '/'
 #EMAIL_HOST = 'smtp.gmail.com'   # service
 #EMAIL_PORT = 587                              # mac errors lesson 61
 #EMAIL_USE_TLS = True
-#EMAIL_HOST_USER = "abdalrhim19991@gmail.com" # company email
+#EMAIL_HOST_USER = "Gmail" # company email
 #EMAIL_HOST_PASSWORD = ""                     # Signing in to Google > App passwords
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
