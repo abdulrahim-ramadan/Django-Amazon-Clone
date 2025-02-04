@@ -15,7 +15,7 @@
 
 Amazon-Clone is more than just another e-commerce platform; it's your gateway to a thriving online retail experience. Built with Python, Django, and Django Rest Framework, it empowers businesses to embrace the digital world and deliver seamless shopping experiences to their customers.
 
-## What Is Django-Amazon?
+### What Is Django-Amazon?
 
 Django Amazon  is an Amazon Clone project that provides a comprehensive e-commerce solution. It encompasses a range of essential features that cover the entire shopping journey:
 
@@ -31,7 +31,7 @@ Django Amazon  is an Amazon Clone project that provides a comprehensive e-commer
 
 - **User Accounts**: Allow customers to create personalized accounts, enhancing their shopping experience.
 
-## Key Features
+### Key Features
 
 🛒 ***Product Management**: Effortlessly create, edit, and categorize products within your catalog.
 
